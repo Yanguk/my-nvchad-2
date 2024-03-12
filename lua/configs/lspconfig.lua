@@ -18,7 +18,13 @@ capabilities.textDocument.foldingRange = {
 
 local default_config = {
   on_init = on_init,
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    nomap("n", "gr")
+    nomap("n", "gd")
+    on_attach(client, bufnr)
+    nomap("n", "gr")
+    nomap("n", "gd")
+  end,
   capabilities = capabilities,
 }
 

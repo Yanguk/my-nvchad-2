@@ -1,6 +1,7 @@
 require("nvchad.mappings")
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
@@ -107,3 +108,36 @@ end)
 map("n", "[c", function()
   require("gitsigns").prev_hunk()
 end)
+
+-- buffer
+nomap("n", "<leader>x")
+nomap("n", "<leader>b")
+map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New Buffer" })
+map("n", "<leader>bx", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "New Buffer" })
+
+-- trouble
+map("n", "<leader>xx", function()
+  require("trouble").toggle()
+end, { desc = "trouble" })
+
+map("n", "<leader>xw", function()
+  require("trouble").toggle("workspace_diagnostics")
+end, { desc = "workspace_diagnostics" })
+
+map("n", "<leader>xd", function()
+  require("trouble").toggle("document_diagnostics")
+end, { desc = "document_diagnostics" })
+
+map("n", "<leader>xq", function()
+  require("trouble").toggle("quickfix")
+end, { desc = "quickfix" })
+
+map("n", "<leader>xl", function()
+  require("trouble").toggle("loclist")
+end, { desc = "loclist" })
+
+map("n", "gR", function()
+  require("trouble").toggle("lsp_references")
+end, { desc = "lsp_references" })

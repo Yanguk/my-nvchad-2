@@ -73,11 +73,18 @@ return {
     dependencies = {
       {
         "stevearc/dressing.nvim",
-        "nvimtools/none-ls.nvim",
-        config = function()
-          require("configs.none-ls")
-        end,
-        dependencies = { "davidmh/cspell.nvim" },
+        {
+          "nvimtools/none-ls.nvim",
+          config = function()
+            require("configs.none-ls")
+          end,
+          dependencies = { "davidmh/cspell.nvim" },
+        },
+
+        {
+          "folke/trouble.nvim",
+          dependencies = { "nvim-tree/nvim-web-devicons" },
+        },
       },
     },
     config = function()
