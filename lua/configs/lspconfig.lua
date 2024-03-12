@@ -1,3 +1,6 @@
+local map = vim.keymap.set
+local nomap = vim.keymap.del
+
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 
@@ -16,7 +19,18 @@ capabilities.textDocument.foldingRange = {
 
 local default_config = {
   on_init = on_init,
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
+    -- Instead of using 'gr', trouble is used.
+    nomap("n", "gr", { buffer = bufnr })
+    map(
+      "n",
+      "gr",
+      "<cmd>TroubleToggle lsp_references<CR>",
+      { desc = "trouble lsp_references", buffer = bufnr }
+    )
+  end,
   capabilities = capabilities,
 }
 
@@ -66,6 +80,9 @@ local server_configs = {
         command = "clippy",
       },
     },
+  },
+  ["lua_ls"] = {
+    on_attach = default_config.on_attach,
   },
 }
 

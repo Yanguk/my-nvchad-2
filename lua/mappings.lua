@@ -128,8 +128,6 @@ map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quic
 
 map("n", "<leader>xl", "<cmd>TroubleToggle loclist<CR>", { desc = "trouble loclist" })
 
-map("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", { desc = "trouble lsp_references" })
-
 -- codeRunner
 map("n", "<leader>cr", function()
   local ft_cmds = {
