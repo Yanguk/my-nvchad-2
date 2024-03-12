@@ -150,3 +150,9 @@ map("n", "<leader>cr", function()
     cmd = ft_cmds[vim.bo.filetype]
   })
 end, { desc = "code runner" })
+
+-- resize window
+map("n", "<A-=>", ":vertical resize +5<CR>") -- make the window biger vertically
+map("n", "<A-->", ":vertical resize -5<CR>") -- make the window smaller vertically
+map("n", "<A-+>", ":resize +2<CR>") -- make the window bigger horizontally by pressing shift and =
+map("n", "<A-_>", ":resize -2<CR>") -- make the window smaller horizontally by pressing shift and -
