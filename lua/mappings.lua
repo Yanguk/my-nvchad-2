@@ -118,26 +118,14 @@ map("n", "<leader>bx", function()
 end, { desc = "New Buffer" })
 
 -- trouble
-map("n", "<leader>xx", function()
-  require("trouble").toggle()
-end, { desc = "trouble" })
+map("n", "<leader>xx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
 
-map("n", "<leader>xw", function()
-  require("trouble").toggle("workspace_diagnostics")
-end, { desc = "workspace_diagnostics" })
+map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { desc = "trouble workspace_diagnostics" })
 
-map("n", "<leader>xd", function()
-  require("trouble").toggle("document_diagnostics")
-end, { desc = "document_diagnostics" })
+map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>", { desc = "trouble document_diagnostics" })
 
-map("n", "<leader>xq", function()
-  require("trouble").toggle("quickfix")
-end, { desc = "quickfix" })
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quickfix" })
 
-map("n", "<leader>xl", function()
-  require("trouble").toggle("loclist")
-end, { desc = "loclist" })
+map("n", "<leader>xl", "<cmd>TroubleToggle loclist<CR>", { desc = "trouble loclist" })
 
-map("n", "gR", function()
-  require("trouble").toggle("lsp_references")
-end, { desc = "lsp_references" })
+map("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", { desc = "trouble lsp_references" })

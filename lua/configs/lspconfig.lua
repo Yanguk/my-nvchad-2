@@ -1,5 +1,3 @@
-local map = vim.keymap.set
-local nomap = vim.keymap.del
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 
@@ -18,13 +16,7 @@ capabilities.textDocument.foldingRange = {
 
 local default_config = {
   on_init = on_init,
-  on_attach = function(client, bufnr)
-    nomap("n", "gr")
-    nomap("n", "gd")
-    on_attach(client, bufnr)
-    nomap("n", "gr")
-    nomap("n", "gd")
-  end,
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 
@@ -48,11 +40,16 @@ local server_configs = {
       })
     end,
     settings = (function()
+      local config = {}
+
       local yarn_path = vim.fn.getcwd() .. "/.yarn"
       local is_yarn_pnp = vim.fn.isdirectory(yarn_path) == 1
-      local nodePath = is_yarn_pnp and vim.fn.getcwd() .. "/.yarn/sdks" or nil
 
-      return { nodePath }
+      if is_yarn_pnp then
+        config.nodePath = vim.fn.getcwd() .. "/.yarn/sdks"
+      end
+
+      return config
     end)(),
   },
   ["bashls"] = {

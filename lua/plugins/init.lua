@@ -80,17 +80,18 @@ return {
           end,
           dependencies = { "davidmh/cspell.nvim" },
         },
-
-        {
-          "folke/trouble.nvim",
-          dependencies = { "nvim-tree/nvim-web-devicons" },
-        },
       },
     },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
     end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = "TroubleToggle",
   },
 
   {
