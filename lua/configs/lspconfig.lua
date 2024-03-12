@@ -1,3 +1,4 @@
+-- cSpell:disable
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
@@ -23,13 +24,14 @@ local default_config = {
     on_attach(client, bufnr)
 
     -- Instead of using 'gr', trouble is used.
-    nomap("n", "gr", { buffer = bufnr })
+    -- nomap("n", "gr", { buffer = bufnr })
     map(
       "n",
       "gr",
       "<cmd>TroubleToggle lsp_references<CR>",
       { desc = "trouble lsp_references", buffer = bufnr }
     )
+
   end,
   capabilities = capabilities,
 }

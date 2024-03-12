@@ -5,17 +5,17 @@
   "language": "en",
   "dictionaryDefinitions": [
     {
-      "path": "~/.config/nvim/lua/custom/cspell/my-dictionary.txt",
+      "path": "~/.config/nvim/cspell/my-dictionary.txt",
       "name": "my_word",
       "addWords": true
     },
     {
-      "path": "~/.config/nvim/lua/custom/cspell/programming.txt",
+      "path": "~/.config/nvim/cspell/programming.txt",
       "name": "programming_word",
       "addWords": true
     },
     {
-      "path": "~/.config/nvim/lua/custom/cspell/knowre-bridge.txt",
+      "path": "~/.config/nvim/cspell/knowre-bridge.txt",
       "name": "knowre_bridge",
       "addWords": true
     }

@@ -1,8 +1,8 @@
+-- cSpell:disable
 require "nvchad.options"
 
 -- add yours here!
 
--- cSpell:disable
 local opt = vim.opt
 local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd

@@ -1,3 +1,4 @@
+-- cSpell:disable
 local WEB_FT_LIST = {
   "html",
   "javascript",
@@ -22,7 +23,6 @@ return {
   {
     "stevearc/conform.nvim",
     config = function()
-      ---@diagnostic disable-next-line: different-requires
       require("configs.conform")
     end,
   },
