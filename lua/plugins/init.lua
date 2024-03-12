@@ -22,6 +22,7 @@ return {
   {
     "stevearc/conform.nvim",
     config = function()
+      ---@diagnostic disable-next-line: different-requires
       require("configs.conform")
     end,
   },
@@ -71,6 +72,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
+        "stevearc/dressing.nvim",
         "nvimtools/none-ls.nvim",
         config = function()
           require("configs.none-ls")
