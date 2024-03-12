@@ -1,7 +1,9 @@
+local map = vim.keymap.set
+local nomap = vim.keymap.del
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 local configs = require("nvchad.configs.lspconfig")
 
 local on_attach = configs.on_attach
@@ -32,25 +34,26 @@ local server_configs = {
   },
   ["eslint"] = {
     on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
+      default_config.on_attach(client, bufnr)
+
       vim.api.nvim_create_autocmd("BufWritePre", {
         buffer = bufnr,
         command = "EslintFixAll",
       })
     end,
-    settings = function()
+    settings = (function()
       local yarn_path = vim.fn.getcwd() .. "/.yarn"
       local is_yarn_pnp = vim.fn.isdirectory(yarn_path) == 1
       local nodePath = is_yarn_pnp and vim.fn.getcwd() .. "/.yarn/sdks" or nil
 
       return { nodePath }
-    end,
+    end)(),
   },
   ["bashls"] = {
     filetypes = { "sh", "zsh", "bash" },
   },
   ["clangd"] = {
-    capabilities = vim.tbl_extend("force", capabilities, {
+    capabilities = vim.tbl_extend("force", default_config.capabilities, {
       offsetEncoding = "utf-16",
     }),
   },
@@ -62,7 +65,6 @@ local server_configs = {
     },
   },
 }
-
 
 for k, v in pairs(server_configs) do
   local server, config = table.unpack(

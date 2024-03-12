@@ -77,11 +77,6 @@ return {
         end,
         dependencies = { "davidmh/cspell.nvim" },
       },
-      {
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = true,
-      },
     },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
