@@ -129,3 +129,24 @@ map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quic
 map("n", "<leader>xl", "<cmd>TroubleToggle loclist<CR>", { desc = "trouble loclist" })
 
 map("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", { desc = "trouble lsp_references" })
+
+-- codeRunner
+map("n", "<leader>cr", function()
+  local ft_cmds = {
+    python = "python3 " .. vim.fn.expand("%"),
+    racket = "csi -script " .. vim.fn.expand("%"),
+    c = "gcc " .. vim.fn.expand("%") .. " -o " .. vim.fn.expand("%:r") .. " && ./" .. vim.fn.expand("%:r"),
+  }
+
+  if ft_cmds[vim.bo.filetype] == nil then
+    vim.notify("No runner for " .. vim.bo.filetype)
+
+    return
+  end
+
+  require("nvchad.term").runner({
+    id = "runner",
+    pos = "sp",
+    cmd = ft_cmds[vim.bo.filetype]
+  })
+end, { desc = "code runner" })
