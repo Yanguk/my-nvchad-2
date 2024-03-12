@@ -98,3 +98,12 @@ map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit �
 
 -- Aerial 플러그인 관련 매핑
 map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial", silent = true }) -- Aerial 토글
+
+-- GitSigns
+map("n", "]c", function()
+  require("gitsigns").next_hunk()
+end)
+
+map("n", "[c", function()
+  require("gitsigns").prev_hunk()
+end)
