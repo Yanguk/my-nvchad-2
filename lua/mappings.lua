@@ -1,3 +1,4 @@
+-- cSpell:disable
 require("nvchad.mappings")
 
 local map = vim.keymap.set
@@ -115,7 +116,7 @@ nomap("n", "<leader>b")
 map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New Buffer" })
 map("n", "<leader>bx", function()
   require("nvchad.tabufline").close_buffer()
-end, { desc = "New Buffer" })
+end, { desc = "Close Buffer" })
 
 -- trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
