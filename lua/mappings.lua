@@ -145,7 +145,7 @@ map("n", "<leader>cr", function()
   require("nvchad.term").runner({
     id = "runner",
     pos = "sp",
-    cmd = ft_cmds[vim.bo.filetype]
+    cmd = ft_cmds[vim.bo.filetype],
   })
 end, { desc = "code runner" })
 

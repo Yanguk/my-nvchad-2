@@ -81,27 +81,9 @@ return {
 
   {
     "mfussenegger/nvim-lint",
-    event = "BufWritePost",
+    event = "BufRead",
     config = function()
-      require("lint").linters_by_ft = {
-        ["typescript"] = { "cspell" },
-        ["json"] = { "cspell" },
-        ["rust"] = { "cspell" },
-        ["toml"] = { "cspell" },
-        ["lua"] = { "cspell" },
-        ["yaml"] = { "cspell" },
-      }
-
-      local originCspell = require("lint").linters.cspell
-
-      table.insert(originCspell.args, "--config")
-      table.insert(originCspell.args, vim.fn.expand("$HOME/.config/nvim/cspell/cspell.json"))
-
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
+      require("configs.nvim-lint")
     end,
   },
 
