@@ -1,7 +1,16 @@
 {
   "words": [],
   "allowCompoundWords": false,
-  "dictionaries": ["en_US", "node", "typescript", "my_word", "programming_word", "knowre_bridge"],
+  "dictionaries": [
+    "en_US",
+    "node",
+    "npm",
+    "typescript",
+    "filetypes",
+    "my_word",
+    "programming_word",
+    "knowre_bridge"
+  ],
   "language": "en",
   "dictionaryDefinitions": [
     {
