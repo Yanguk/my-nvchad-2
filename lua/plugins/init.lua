@@ -1,3 +1,4 @@
+-- cSpell:disable
 local WEB_FT_LIST = {
   "html",
   "javascript",
@@ -112,7 +113,8 @@ return {
         "deno",
 
         -- util
-        "codespell",
+        "cspell",
+        -- "codespell",
       },
     },
   },

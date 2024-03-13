@@ -1,3 +1,4 @@
+-- cSpell:disable
 require "nvchad.options"
 
 -- add yours here!
