@@ -25,7 +25,7 @@ local default_config = {
 
     -- Instead of using 'gr', trouble is used.
     map("n", "<leader>D", "<cmd>TroubleToggle lsp_type_definition<CR>", { desc = "trouble lsp_references", buffer = bufnr })
-    map("n", "gr", "<cmd>TroubleToggle lsp_implementation<CR>", { desc = "trouble lsp_references", buffer = bufnr })
+    map("n", "gr", "<cmd>TroubleToggle lsp_implementations<CR>", { desc = "trouble lsp_references", buffer = bufnr })
     map("n", "gl", "<cmd>TroubleToggle lsp_references<CR>", { desc = "trouble lsp_references", buffer = bufnr })
     map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", { desc = "trouble lsp_references", buffer = bufnr })
   end,

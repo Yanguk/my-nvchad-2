@@ -3,3 +3,4 @@ axios
 testid
 ratatui
 crossterm
+postbuild

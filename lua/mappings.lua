@@ -117,6 +117,9 @@ map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New Buffer" })
 map("n", "<leader>bx", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "Close Buffer" })
+map("n", "<leader>ba", function()
+  require("nvchad.tabufline").closeAllBufs()
+end, { desc = "Close Buffer" })
 
 -- trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
