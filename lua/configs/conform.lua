@@ -1,12 +1,14 @@
+-- cSpell:disable
 local options = {
   lsp_fallback = true,
 
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    tsx = { "prettier" },
+    javascript = { "deno_fmt" },
+    typescript = { "deno_fmt" },
+    javascriptreact = { "deno_fmt" },
+    typescriptreact = { "deno_fmt" },
 
     racket = { "raco" },
     sh = { "shfmt" },
@@ -14,7 +16,7 @@ local options = {
     c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "prettier" },
+    json = { "deno_fmt" },
     yaml = { "yamlfmt" },
   },
 }

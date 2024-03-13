@@ -1,13 +1,7 @@
+-- cSpell:disable
 local nvim_lint = require("lint")
 
-nvim_lint.linters_by_ft = {
-  ["typescript"] = { "cspell" },
-  ["json"] = { "cspell" },
-  ["rust"] = { "cspell" },
-  ["toml"] = { "cspell" },
-  ["lua"] = { "cspell" },
-  ["yaml"] = { "cspell" },
-}
+nvim_lint.linters_by_ft = {}
 
 local origin_cspell = nvim_lint.linters.cspell
 
@@ -16,6 +10,7 @@ table.insert(origin_cspell.args, vim.fn.expand("$HOME/.config/nvim/cspell/cspell
 
 local callback = function()
   nvim_lint.try_lint()
+  nvim_lint.try_lint("cspell")
 end
 
 vim.schedule(callback)

@@ -108,12 +108,13 @@ return {
 
         -- format
         "shfmt",
-        "prettier",
         "clang-format",
         "stylua",
+        "deno",
 
         -- util
         "cspell",
+        -- "codespell",
       },
     },
   },
