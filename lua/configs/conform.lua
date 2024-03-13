@@ -1,4 +1,3 @@
--- cSpell:disable
 local options = {
   lsp_fallback = true,
 

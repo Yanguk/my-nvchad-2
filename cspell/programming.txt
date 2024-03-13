@@ -1,5 +1,0 @@
-yamlls
-axios
-testid
-ratatui
-crossterm
