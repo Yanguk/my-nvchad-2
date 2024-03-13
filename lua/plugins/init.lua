@@ -71,20 +71,37 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      {
-        "stevearc/dressing.nvim",
-        {
-          "nvimtools/none-ls.nvim",
-          config = function()
-            require("configs.none-ls")
-          end,
-          dependencies = { "davidmh/cspell.nvim" },
-        },
-      },
+      "stevearc/dressing.nvim",
     },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    event = "BufWritePost",
+    config = function()
+      require("lint").linters_by_ft = {
+        ["typescript"] = { "cspell" },
+        ["json"] = { "cspell" },
+        ["rust"] = { "cspell" },
+        ["toml"] = { "cspell" },
+        ["lua"] = { "cspell" },
+        ["yaml"] = { "cspell" },
+      }
+
+      local originCspell = require("lint").linters.cspell
+
+      table.insert(originCspell.args, "--config")
+      table.insert(originCspell.args, vim.fn.expand("$HOME/.config/nvim/cspell/cspell.json"))
+
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
     end,
   },
 
