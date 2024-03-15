@@ -70,9 +70,6 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      "stevearc/dressing.nvim",
-    },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
@@ -486,5 +483,10 @@ return {
         desc = "Show Crates Dependencies",
       })
     end,
+  },
+
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
   },
 }

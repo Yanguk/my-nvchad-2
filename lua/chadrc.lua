@@ -1,7 +1,8 @@
 local M = {}
 
 M.ui = {
-  theme = "gruvbox",
+  theme = "gruvchad",
+  transparency = true,
 
   term = {
     sizes = { sp = 0.3, vsp = 0.2 },
