@@ -111,26 +111,15 @@ map("n", "[c", function()
 end)
 
 -- buffer
-nomap("n", "<leader>x")
-nomap("n", "<leader>b")
-map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New Buffer" })
-map("n", "<leader>bx", function()
-  require("nvchad.tabufline").close_buffer()
-end, { desc = "Close Buffer" })
-map("n", "<leader>ba", function()
+map("n", "<leader>tx", function()
   require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Close Buffer" })
 
 -- trouble
-map("n", "<leader>xx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
-
-map("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { desc = "trouble workspace_diagnostics" })
-
-map("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>", { desc = "trouble document_diagnostics" })
-
-map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quickfix" })
-
-map("n", "<leader>xl", "<cmd>TroubleToggle loclist<CR>", { desc = "trouble loclist" })
+map("n", "<leader>lx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
+map("n", "<leader>lw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { desc = "trouble workspace_diagnostics" })
+map("n", "<leader>ld", "<cmd>TroubleToggle document_diagnostics<CR>", { desc = "trouble document_diagnostics" })
+map("n", "<leader>lq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quickfix" })
 
 -- codeRunner
 map("n", "<leader>cr", function()
