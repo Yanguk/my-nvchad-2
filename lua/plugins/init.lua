@@ -268,12 +268,6 @@ return {
   },
 
   {
-    "mrcjkb/rustaceanvim",
-    version = "^4", -- Recommended
-    ft = { "rust" },
-  },
-
-  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },

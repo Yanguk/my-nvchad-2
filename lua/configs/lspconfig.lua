@@ -94,16 +94,5 @@ for k, v in pairs(server_configs) do
     type(k) == "number" and { v, default_config } or { k, vim.tbl_deep_extend("force", default_config, v) }
   )
 
-  if server == "rust_analyzer" then
-    vim.g.rustaceanvim = {
-      -- Plugin configuration
-      tools = {},
-      -- LSP configuration
-      server = config,
-      -- DAP configuration
-      dap = {},
-    }
-  else
-    lspconfig[server].setup(config)
-  end
+  lspconfig[server].setup(config)
 end
