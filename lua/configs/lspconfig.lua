@@ -27,12 +27,12 @@ local default_config = {
     map(
       "n",
       "<leader>D",
-      "<cmd>TroubleToggle lsp_type_definition<CR>",
+      "<cmd>Trouble lsp_type_definition<CR>",
       { desc = "trouble lsp_references", buffer = bufnr }
     )
-    map("n", "gi", "<cmd>TroubleToggle lsp_implementations<CR>", { desc = "trouble lsp_references", buffer = bufnr })
-    map("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", { desc = "trouble lsp_references", buffer = bufnr })
-    map("n", "gd", "<cmd>TroubleToggle lsp_definitions<CR>", { desc = "trouble lsp_references", buffer = bufnr })
+    map("n", "gi", "<cmd>Trouble lsp_implementations<CR>", { desc = "trouble lsp_references", buffer = bufnr })
+    map("n", "gr", "<cmd>Trouble lsp_references<CR>", { desc = "trouble lsp_references", buffer = bufnr })
+    map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", { desc = "trouble lsp_references", buffer = bufnr })
   end,
   capabilities = capabilities,
 }
