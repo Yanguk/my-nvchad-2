@@ -234,7 +234,10 @@ return {
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
-    opts = { stages = "static" },
+    opts = {
+      stages = "static",
+      background_colour = "#000000",
+    },
     config = function(_, opts)
       require("notify").setup(opts)
       vim.notify = require("notify")
