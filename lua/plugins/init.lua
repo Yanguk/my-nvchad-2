@@ -108,6 +108,7 @@ return {
         "clang-format",
         "stylua",
         "deno",
+        "yamlfmt",
 
         -- util
         "cspell",
@@ -236,7 +237,7 @@ return {
     event = "VeryLazy",
     opts = {
       stages = "static",
-      background_colour = "#000000",
+      background_colour = "#1a1b26",
     },
     config = function(_, opts)
       require("notify").setup(opts)
@@ -310,13 +311,6 @@ return {
       { "nvim-lua/plenary.nvim" },
       { "nvim-tree/nvim-tree.lua" },
     },
-    config = true,
-  },
-
-  {
-    "rest-nvim/rest.nvim",
-    ft = { "http" },
-    dependencies = { "nvim-lua/plenary.nvim" },
     config = true,
   },
 
@@ -485,5 +479,10 @@ return {
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
+  },
+
+  {
+    "BlackLight/nvim-http",
+    ft = "http",
   },
 }

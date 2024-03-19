@@ -88,12 +88,7 @@ map(
     end
   end)(),
   { desc = "Resize nvimtree toggle" }
-) -- NvimTree 크기 조절 토글
-
--- Rest Nvim 플러그인 관련 매핑
-map("n", "<leader>ru", "<Plug>RestNvim", { desc = "Rest under cursor" }) -- 커서 아래의 휴식
-map("n", "<leader>rp", "<Plug>RestNvimPreview", { desc = "Rest preview" }) -- 미리보기 휴식
-map("n", "<leader>rl", "<Plug>RestNvimLast", { desc = "Rest last" }) -- 마지막 휴식
+)
 
 -- -- LazyGit 플러그인 관련 매핑
 map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit 열기

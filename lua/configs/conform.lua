@@ -9,6 +9,7 @@ local options = {
     typescript = { "deno_fmt" },
     javascriptreact = { "deno_fmt" },
     typescriptreact = { "deno_fmt" },
+    markdown = { "deno_fmt" },
 
     racket = { "raco" },
     sh = { "shfmt" },
