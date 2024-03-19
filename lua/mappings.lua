@@ -118,10 +118,13 @@ map("n", "<leader>lq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quic
 
 -- codeRunner
 map("n", "<leader>cr", function()
+  local current_file = vim.fn.expand("%:p")
+  local compiled_file = vim.fn.expand("%:t:r")
+
   local ft_cmds = {
-    python = "python3 " .. vim.fn.expand("%"),
-    racket = "csi -script " .. vim.fn.expand("%"),
-    c = "gcc " .. vim.fn.expand("%") .. " -o " .. vim.fn.expand("%:r") .. " && ./" .. vim.fn.expand("%:r"),
+    python = "python3 " .. current_file,
+    racket = "csi -script " .. current_file,
+    c = "gcc " .. current_file .. " -o " .. compiled_file .. " && " .. "./" .. compiled_file,
   }
 
   if ft_cmds[vim.bo.filetype] == nil then

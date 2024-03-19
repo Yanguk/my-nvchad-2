@@ -480,9 +480,4 @@ return {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
-
-  {
-    "BlackLight/nvim-http",
-    ft = "http",
-  },
 }
