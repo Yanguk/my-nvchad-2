@@ -2,12 +2,16 @@
 require "nvchad.options"
 
 -- add yours here!
-
 local opt = vim.opt
 local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd
 
+----------- default options -----------
 vim.loader.enable()
+o.termguicolors = true
+opt.wrap = false
+-- don't create backup files
+opt.swapfile = false
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
@@ -22,7 +26,10 @@ for i = 1, 9, 1 do
   end)
 end
 
--- tab
+-- 주석처리 에 대한 포멧팅 옵션
+vim.cmd [[autocmd FileType * set formatoptions-=cro]]
+
+----------- fileTypes -----------
 autocmd("FileType", {
   pattern = { "typescriptreact", "typescript" },
   callback = function()
@@ -33,17 +40,20 @@ autocmd("FileType", {
   end,
 })
 
-o.termguicolors = true
-opt.wrap = false
+autocmd("FileType", {
+  pattern = "yaml",
+  callback = function()
+    opt.tabstop = 2
+    opt.shiftwidth = 2
+    opt.softtabstop = 2
+    opt.expandtab = true
+  end,
+})
 
--- don't create backup files
-opt.swapfile = false
-
+----------- plugin -----------
 -- UFO folding
 o.foldcolumn = "1" -- '0' is not bad
 o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
-vim.cmd [[autocmd FileType * set formatoptions-=cro]]
