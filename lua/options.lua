@@ -1,5 +1,5 @@
 -- cSpell:disable
-require "nvchad.options"
+require("nvchad.options")
 
 -- add yours here!
 local opt = vim.opt
@@ -27,7 +27,7 @@ for i = 1, 9, 1 do
 end
 
 -- 주석처리 에 대한 포멧팅 옵션
-vim.cmd [[autocmd FileType * set formatoptions-=cro]]
+vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 
 ----------- fileTypes -----------
 autocmd("FileType", {
@@ -50,10 +50,18 @@ autocmd("FileType", {
   end,
 })
 
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})
+
+vim.treesitter.language.register("markdown", "mdx")
+
 ----------- plugin -----------
 -- UFO folding
 o.foldcolumn = "1" -- '0' is not bad
-o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
