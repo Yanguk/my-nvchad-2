@@ -483,12 +483,11 @@ return {
 
   {
     "vhyrro/luarocks.nvim",
-    branch = "go-away-python",
-    config = function()
-      require("luarocks").setup({
-        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-      })
-    end,
+    priority = 1000,
+    opts = {
+      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+    },
+    config = true,
   },
 
   {
