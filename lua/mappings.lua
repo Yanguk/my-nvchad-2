@@ -67,9 +67,6 @@ map("n", "<leader>ip", "<cmd>IconPickerNormal emoji nerd_font symbols<CR>", { de
 -- Zen Mode 플러그인 관련 매핑
 map("n", "<leader>zm", ":ZenMode<CR>", { desc = "ZenMode" }) -- ZenMode 활성화
 
--- Gitsigns 플러그인 관련 매핑
-map("n", "<leader>gl", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame" }) -- 현재 줄 블레임 토글
-
 -- NvimTree 플러그인 관련 매핑
 map(
   "n",
@@ -95,15 +92,6 @@ map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit �
 
 -- Aerial 플러그인 관련 매핑
 map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial", silent = true }) -- Aerial 토글
-
--- GitSigns
-map("n", "]c", function()
-  require("gitsigns").next_hunk()
-end)
-
-map("n", "[c", function()
-  require("gitsigns").prev_hunk()
-end)
 
 -- buffer
 map("n", "<leader>tx", function()

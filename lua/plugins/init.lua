@@ -498,4 +498,57 @@ return {
       require("rest-nvim").setup()
     end,
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      local nvchad_opts = require("nvchad.configs.gitsigns")
+
+      nvchad_opts.on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+        local map = vim.keymap.set
+
+        local function opts(desc)
+          return { buffer = bufnr, desc = desc }
+        end
+
+        -- Navigation
+        map("n", "]c", function()
+          if vim.wo.diff then
+            return "]c"
+          end
+          vim.schedule(function()
+            gs.next_hunk()
+          end)
+          return "<Ignore>"
+        end, {
+          expr = true,
+          buffer = bufnr,
+          desc = "Next Hunk",
+        })
+
+        map("n", "[c", function()
+          if vim.wo.diff then
+            return "[c"
+          end
+          vim.schedule(function()
+            gs.prev_hunk()
+          end)
+          return "<Ignore>"
+        end, {
+          expr = true,
+          buffer = bufnr,
+          desc = "Prev Hunk",
+        })
+
+        -- Actions
+        map("n", "<leader>rh", gs.reset_hunk, opts("Reset Hunk"))
+        map("n", "<leader>ph", gs.preview_hunk, opts("Preview Hunk"))
+        map("n", "<leader>gb", gs.blame_line, opts("Blame Line"))
+        map("n", "<leader>gl", gs.toggle_current_line_blame, opts("toggle_current_line_blame"))
+      end
+
+      return nvchad_opts
+    end,
+  },
 }
