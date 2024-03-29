@@ -66,8 +66,10 @@ o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+------------------------------
+
 -- 커서 위치 복원
-autocmd("BufReadPost", {
+--[[ autocmd("BufReadPost", {
   pattern = "*",
   callback = function()
     local line = vim.fn.line "'\""
@@ -80,4 +82,4 @@ autocmd("BufReadPost", {
       vim.cmd 'normal! g`"'
     end
   end,
-})
+}) ]]
