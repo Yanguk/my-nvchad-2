@@ -161,6 +161,9 @@ return {
         "zbirenbaum/copilot-cmp",
         config = true,
       },
+      {
+        "hrsh7th/cmp-emoji",
+      },
     },
     config = function(_, opts)
       local cmp = require("cmp")
@@ -186,6 +189,7 @@ return {
         { name = "buffer", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
         { name = "path", group_index = 2 },
+        { name = "emoji", group_index = 2 },
       },
     },
   },
@@ -294,17 +298,6 @@ return {
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-  },
-
-  {
-    "ziontee113/icon-picker.nvim",
-    cmd = { "IconPickerNormal" },
-    dependencies = { "stevearc/dressing.nvim" },
-    config = function()
-      require("icon-picker").setup({
-        disable_legacy_commands = true,
-      })
-    end,
   },
 
   {
