@@ -264,6 +264,13 @@ return {
   {
     "nvim-pack/nvim-spectre",
     cmd = { "Spectre" },
+    opts = {
+      default = {
+        replace = {
+          cmd = "oxi",
+        },
+      },
+    },
     config = true,
   },
 
@@ -457,17 +464,17 @@ return {
 
       vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, {
         silent = true,
-        desc = "Show Crates Versions",
+        desc = "Crates Show Versions",
       })
 
       vim.keymap.set("n", "<leader>cf", crates.show_features_popup, {
         silent = true,
-        desc = "Show Crates Features",
+        desc = "Crates Show Features",
       })
 
       vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, {
         silent = true,
-        desc = "Show Crates Dependencies",
+        desc = "Crates Show Dependencies",
       })
     end,
   },

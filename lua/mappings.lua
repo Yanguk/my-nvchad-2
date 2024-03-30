@@ -91,7 +91,7 @@ map(
 map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit 열기
 
 -- Aerial 플러그인 관련 매핑
-map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial", silent = true }) -- Aerial 토글
+map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle", silent = true }) -- Aerial 토글
 
 -- buffer
 map("n", "<leader>tx", function()
@@ -135,5 +135,5 @@ map("n", "<A-+>", ":resize +2<CR>") -- make the window bigger horizontally by pr
 map("n", "<A-_>", ":resize -2<CR>") -- make the window smaller horizontally by pressing shift and -
 
 -- rest nvim
-map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run request under the cursor" })
-map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Re-run latest request" })
+map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "RestNvim Run request under the cursor" })
+map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "RestNvim Re-run latest request" })
