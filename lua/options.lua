@@ -10,8 +10,7 @@ local autocmd = vim.api.nvim_create_autocmd
 vim.loader.enable()
 o.termguicolors = true
 opt.wrap = false
--- don't create backup files
-opt.swapfile = false
+opt.swapfile = false -- don't create backup files
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
@@ -28,6 +27,7 @@ end
 
 -- 주석처리 에 대한 포멧팅 옵션
 vim.cmd([[autocmd FileType * set formatoptions-=cro]])
+---------------------------------------
 
 ----------- fileTypes -----------
 autocmd("FileType", {
@@ -57,6 +57,7 @@ vim.filetype.add({
 })
 
 vim.treesitter.language.register("markdown", "mdx")
+------------------------------
 
 ----------- plugin -----------
 -- UFO folding
@@ -65,21 +66,4 @@ o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
 ------------------------------
-
--- 커서 위치 복원
---[[ autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    local line = vim.fn.line "'\""
-    if
-      line > 1
-      and line <= vim.fn.line "$"
-      and vim.bo.filetype ~= "commit"
-      and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
-    then
-      vim.cmd 'normal! g`"'
-    end
-  end,
-}) ]]

@@ -8,20 +8,14 @@ table.unpack = table.unpack or unpack
 local lspconfig = require("lspconfig")
 local configs = require("nvchad.configs.lspconfig")
 
-local on_attach = configs.on_attach
+local nvchad_on_attach = configs.on_attach
 local on_init = configs.on_init
 local capabilities = configs.capabilities
-
--- nvim-ufo
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
 
 local default_config = {
   on_init = on_init,
   on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
+    nvchad_on_attach(client, bufnr)
 
     -- Instead of using 'gr', trouble is used.
     map(
@@ -39,6 +33,7 @@ local default_config = {
 
 local server_configs = {
   "yamlls",
+  "lua_ls",
 
   ["tsserver"] = {
     init_options = {
@@ -83,9 +78,6 @@ local server_configs = {
         command = "clippy",
       },
     },
-  },
-  ["lua_ls"] = {
-    on_attach = default_config.on_attach,
   },
 }
 

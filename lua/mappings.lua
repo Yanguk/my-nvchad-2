@@ -126,7 +126,7 @@ map("n", "<leader>cr", function()
     pos = "sp",
     cmd = ft_cmds[vim.bo.filetype],
   })
-end, { desc = "code runner" })
+end, { desc = "codeRunner run" })
 
 -- resize window
 map("n", "<A-=>", ":vertical resize +5<CR>") -- make the window biger vertically
@@ -137,3 +137,7 @@ map("n", "<A-_>", ":resize -2<CR>") -- make the window smaller horizontally by p
 -- rest nvim
 map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "RestNvim Run request under the cursor" })
 map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "RestNvim Re-run latest request" })
+
+-- nvim-ufo
+map("n", "zR", require("ufo").openAllFolds, { desc = "ufo open All Folds" })
+map("n", "zM", require("ufo").closeAllFolds, { desc = "ufo close All Folds" })

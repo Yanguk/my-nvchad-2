@@ -345,12 +345,11 @@ return {
         end,
       },
     },
-    config = function(_, opts)
-      vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "open All Folds" })
-      vim.keymap.set("n", "zM", require("ufo").closeAllFolds, { desc = "close All Folds" })
-
-      require("ufo").setup(opts)
-    end,
+    opts = {
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    },
   },
 
   {
