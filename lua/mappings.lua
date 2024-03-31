@@ -31,8 +31,8 @@ map(
 map("v", "<leader>sw", "<esc><cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" }) -- 현재 선택한 단어 검색
 
 -- Markdown Preview 플러그인 관련 매핑
-map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Open preview" }) -- 미리보기 열기
-map("n", "<leader>mc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Close preview" }) -- 미리보기 닫기
+map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Open preview" }) -- 미리보기 열기
+map("n", "<leader>mc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Markdown Close preview" }) -- 미리보기 닫기
 
 -- Trailing Space 플러그인 관련 매핑
 map(

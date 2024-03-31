@@ -525,10 +525,10 @@ return {
         })
 
         -- Actions
-        map("n", "<leader>rh", gs.reset_hunk, opts("Reset Hunk"))
-        map("n", "<leader>ph", gs.preview_hunk, opts("Preview Hunk"))
-        map("n", "<leader>gb", gs.blame_line, opts("Blame Line"))
-        map("n", "<leader>gl", gs.toggle_current_line_blame, opts("toggle_current_line_blame"))
+        map("n", "<leader>rh", gs.reset_hunk, opts("GitSings Reset Hunk"))
+        map("n", "<leader>ph", gs.preview_hunk, opts("GitSings Preview Hunk"))
+        map("n", "<leader>gb", gs.blame_line, opts("GitSings Blame Line"))
+        map("n", "<leader>gl", gs.toggle_current_line_blame, opts("GitSings toggle_current_line_blame"))
       end
 
       return nvchad_opts
