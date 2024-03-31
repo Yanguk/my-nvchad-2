@@ -365,7 +365,7 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
+    opts = function ()
       local js = {
         left = 'console.log("',
         right = '")',
@@ -373,17 +373,15 @@ return {
         right_var = ")",
       }
 
-      local opts = {
+      return {
         print_tag = "DEBUG_💥",
         filetypes = {
           ["typescript"] = js,
           ["typescriptreact"] = js,
+          ["javascript"] = js,
+          ["javascriptreact"] = js,
         },
       }
-
-      require("debugprint").setup(opts)
-
-      vim.keymap.set("n", "g?d", require("debugprint").deleteprints, { desc = "DeleteDebugPrints" })
     end,
     version = "*",
   },

@@ -141,3 +141,6 @@ map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "RestNvim Re-run lates
 -- nvim-ufo
 map("n", "zR", require("ufo").openAllFolds, { desc = "ufo open All Folds" })
 map("n", "zM", require("ufo").closeAllFolds, { desc = "ufo close All Folds" })
+
+-- debugprint
+map("n", "g?d", require("debugprint").deleteprints, { desc = "debugPrint DeleteDebugPrints" })
