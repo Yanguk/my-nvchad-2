@@ -5,18 +5,8 @@ local WEB_FT_LIST = {
   "typescript",
   "javascriptreact",
   "typescriptreact",
-  "svelte",
   "vue",
-  "tsx",
-  "jsx",
-  "rescript",
-  "xml",
-  "php",
   "markdown",
-  "astro",
-  "glimmer",
-  "handlebars",
-  "hbs",
 }
 
 return {
