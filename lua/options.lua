@@ -18,13 +18,6 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
--- goToTab
-for i = 1, 9, 1 do
-  vim.keymap.set("n", string.format("<A-%s>", i), function()
-    vim.api.nvim_set_current_buf(vim.t.bufs[i])
-  end)
-end
-
 -- 주석처리 에 대한 포멧팅 옵션
 vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 ---------------------------------------
