@@ -147,6 +147,7 @@ map("n", "g?d", require("debugprint").deleteprints, { desc = "debugPrint DeleteD
 
 -- delete default map nvcahd
 nomap("t", "<ESC>")
+nomap("n", "<leader>h")
 
 -- goToTab
 for i = 1, 9, 1 do

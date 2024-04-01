@@ -507,11 +507,24 @@ return {
           desc = "Prev Hunk",
         })
 
-        -- Actions
-        map("n", "<leader>rh", gs.reset_hunk, opts("GitSings Reset Hunk"))
-        map("n", "<leader>ph", gs.preview_hunk, opts("GitSings Preview Hunk"))
-        map("n", "<leader>gb", gs.blame_line, opts("GitSings Blame Line"))
-        map("n", "<leader>gl", gs.toggle_current_line_blame, opts("GitSings toggle_current_line_blame"))
+        map("n", "<leader>hs", gs.stage_hunk, opts("GitSings Stage Hunk"))
+        map("n", "<leader>hr", gs.reset_hunk, opts("GitSings Reset Hunk"))
+
+        map("v", "<leader>hs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, opts("GitSings Stage Hunk"))
+        map("v", "<leader>hr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, opts("GitSings Reset Hunk"))
+
+        map("n", "<leader>hS", gs.stage_buffer, opts("GitSings Stage Buffer"))
+        map("n", "<leader>hu", gs.undo_stage_hunk, opts("GitSings Undo Stage Hunk"))
+        map("n", "<leader>hR", gs.reset_buffer, opts("GitSings Reset Buffer"))
+        map("n", "<leader>hp", gs.preview_hunk, opts("GitSings Preview Hunk"))
+        map("n", "<leader>hb", gs.blame_line, opts("GitSings Blame Line"))
+        map("n", "<leader>hB", function() gs.blame_line({ full = true }) end, opts("GitSings Blame Line (full)"))
+
+        map("n", "<leader>tb", gs.toggle_current_line_blame, opts("GitSings Toggle Blame Line"))
+        map("n", "<leader>td", gs.toggle_deleted, opts("GitSings Toggle Deleted"))
+
+        map("n", "<leader>hd", gs.diffthis, opts("GitSings Diff This"))
+        map("n", "<leader>hD", function() gs.diffthis("~") end, opts("GitSings Diff This (cached)"))
       end
 
       return nvchad_opts
