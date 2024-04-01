@@ -144,3 +144,6 @@ map("n", "zM", require("ufo").closeAllFolds, { desc = "ufo close All Folds" })
 
 -- debugprint
 map("n", "g?d", require("debugprint").deleteprints, { desc = "debugPrint DeleteDebugPrints" })
+
+-- delete default map nvcahd
+nomap("t", "<ESC>")

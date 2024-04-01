@@ -24,6 +24,7 @@ return {
       filesystem_watchers = {
         ignore_dirs = {
           "node_modules",
+          ".git"
         },
       },
     },
@@ -364,8 +365,10 @@ return {
         filetypes = {
           ["typescript"] = js,
           ["typescriptreact"] = js,
+          ["tsx"] = js,
           ["javascript"] = js,
           ["javascriptreact"] = js,
+          ["jsx"] = js,
         },
       }
     end,
