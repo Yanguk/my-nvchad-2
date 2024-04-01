@@ -335,11 +335,7 @@ return {
         end,
       },
     },
-    opts = {
-      provider_selector = function()
-        return { "treesitter", "indent" }
-      end,
-    },
+    config = true,
   },
 
   {
@@ -355,7 +351,7 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-    opts = function ()
+    opts = function()
       local js = {
         left = 'console.log("',
         right = '")',

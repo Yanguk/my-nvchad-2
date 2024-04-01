@@ -9,11 +9,11 @@ local lspconfig = require("lspconfig")
 local configs = require("nvchad.configs.lspconfig")
 
 local nvchad_on_attach = configs.on_attach
-local on_init = configs.on_init
-local capabilities = configs.capabilities
+local nvchad_on_init = configs.on_init
+local nvchad_capabilities = configs.capabilities
 
 local default_config = {
-  on_init = on_init,
+  on_init = nvchad_on_init,
   on_attach = function(client, bufnr)
     nvchad_on_attach(client, bufnr)
 
@@ -28,7 +28,13 @@ local default_config = {
     map("n", "gr", "<cmd>Trouble lsp_references<CR>", { desc = "trouble lsp_references", buffer = bufnr })
     map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", { desc = "trouble lsp_references", buffer = bufnr })
   end,
-  capabilities = capabilities,
+  capabilities = nvchad_capabilities,
+}
+
+-- nvim-ufo (ts 에서 배열을 폴드할려면 lsp로 해야함)
+default_config.capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 
 local server_configs = {
