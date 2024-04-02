@@ -1,6 +1,5 @@
 -- cSpell:disable
 local map = vim.keymap.set
-local nomap = vim.keymap.del
 
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
@@ -17,16 +16,15 @@ local default_config = {
   on_attach = function(client, bufnr)
     nvchad_on_attach(client, bufnr)
 
+    local function opts(desc)
+      return { buffer = bufnr, desc = desc }
+    end
+
     -- Instead of using 'gr', trouble is used.
-    map(
-      "n",
-      "<leader>D",
-      "<cmd>Trouble lsp_type_definition<CR>",
-      { desc = "trouble lsp_references", buffer = bufnr }
-    )
-    map("n", "gi", "<cmd>Trouble lsp_implementations<CR>", { desc = "trouble lsp_references", buffer = bufnr })
-    map("n", "gr", "<cmd>Trouble lsp_references<CR>", { desc = "trouble lsp_references", buffer = bufnr })
-    map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", { desc = "trouble lsp_references", buffer = bufnr })
+    map("n", "<leader>D", "<cmd>Trouble lsp_type_definition<CR>", opts("Trouble lsp_type_definition"))
+    map("n", "gi", "<cmd>Trouble lsp_implementations<CR>", opts("Trouble lsp_implementations"))
+    map("n", "gr", "<cmd>Trouble lsp_references<CR>", opts("Trouble lsp_references"))
+    map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", opts("Trouble lsp_definitions"))
   end,
   capabilities = nvchad_capabilities,
 }
