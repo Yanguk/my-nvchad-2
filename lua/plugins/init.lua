@@ -510,24 +510,45 @@ return {
         map("n", "<leader>hs", gs.stage_hunk, opts("GitSigns Stage Hunk"))
         map("n", "<leader>hr", gs.reset_hunk, opts("GitSigns Reset Hunk"))
 
-        map("v", "<leader>hs", function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, opts("GitSigns Stage Hunk"))
-        map("v", "<leader>hr", function() gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end, opts("GitSigns Reset Hunk"))
+        map("v", "<leader>hs", function()
+          gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+        end, opts("GitSigns Stage Hunk"))
+        map("v", "<leader>hr", function()
+          gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+        end, opts("GitSigns Reset Hunk"))
 
         map("n", "<leader>hS", gs.stage_buffer, opts("GitSigns Stage Buffer"))
         map("n", "<leader>hu", gs.undo_stage_hunk, opts("GitSigns Undo Stage Hunk"))
         map("n", "<leader>hR", gs.reset_buffer, opts("GitSigns Reset Buffer"))
         map("n", "<leader>hp", gs.preview_hunk, opts("GitSigns Preview Hunk"))
         map("n", "<leader>hb", gs.blame_line, opts("GitSigns Blame Line"))
-        map("n", "<leader>hB", function() gs.blame_line({ full = true }) end, opts("GitSigns Blame Line (full)"))
+        map("n", "<leader>hB", function()
+          gs.blame_line({ full = true })
+        end, opts("GitSigns Blame Line (full)"))
 
         map("n", "<leader>tb", gs.toggle_current_line_blame, opts("GitSigns Toggle Blame Line"))
         map("n", "<leader>td", gs.toggle_deleted, opts("GitSigns Toggle Deleted"))
 
         map("n", "<leader>hd", gs.diffthis, opts("GitSigns Diff This"))
-        map("n", "<leader>hD", function() gs.diffthis("~") end, opts("GitSigns Diff This (cached)"))
+        map("n", "<leader>hD", function()
+          gs.diffthis("~")
+        end, opts("GitSigns Diff This (cached)"))
       end
 
       return nvchad_opts
     end,
+  },
+
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+    opts = require("configs.typescript-tools"),
+  },
+
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4",
+    ft = { "rust" },
   },
 }

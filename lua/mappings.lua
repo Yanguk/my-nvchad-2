@@ -61,9 +61,6 @@ map("n", "<leader>do", ":DiffviewOpen<CR>", { desc = "Diffview open" }) -- Diffv
 map("n", "<leader>dv", ":DiffviewFileHistory %<CR>", { desc = "Diffview file %" }) -- Diffview 파일 열기
 map("n", "<leader>dc", ":DiffviewClose<CR>", { desc = "Diffview close" }) -- Diffview 닫기
 
--- Icon Picker 플러그인 관련 매핑
-map("n", "<leader>ip", "<cmd>IconPickerNormal emoji nerd_font symbols<CR>", { desc = "Open icon picker" }) -- 아이콘 선택기 열기
-
 -- Zen Mode 플러그인 관련 매핑
 map("n", "<leader>zm", ":ZenMode<CR>", { desc = "ZenMode" }) -- ZenMode 활성화
 

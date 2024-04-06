@@ -20,7 +20,6 @@ autocmd("VimResized", {
 
 -- 주석처리 에 대한 포멧팅 옵션
 vim.cmd([[autocmd FileType * set formatoptions-=cro]])
----------------------------------------
 
 ----------- fileTypes -----------
 autocmd("FileType", {
@@ -50,7 +49,6 @@ vim.filetype.add({
 })
 
 vim.treesitter.language.register("markdown", "mdx")
-------------------------------
 
 ----------- plugin -----------
 -- UFO folding
@@ -59,4 +57,6 @@ o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease
 o.foldlevelstart = 99
 o.foldenable = true
 o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-------------------------------
+
+--------- rustaceanvim ---------
+require("configs.rustaceanvim")
