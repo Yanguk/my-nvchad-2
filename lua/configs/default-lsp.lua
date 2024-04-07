@@ -7,6 +7,7 @@ local nvchad_on_init = configs.on_init
 local nvchad_capabilities = configs.capabilities
 
 local default_config = {
+  capabilities = nvchad_capabilities,
   on_init = nvchad_on_init,
   on_attach = function(client, bufnr)
     nvchad_on_attach(client, bufnr)
@@ -20,15 +21,7 @@ local default_config = {
     map("n", "gi", "<cmd>Trouble lsp_implementations<CR>", opts("Trouble lsp_implementations"))
     map("n", "gr", "<cmd>Trouble lsp_references<CR>", opts("Trouble lsp_references"))
     map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", opts("Trouble lsp_definitions"))
-
-    if client.server_capabilities.inlayHintProvider then
-      map("n", "<leader>ih", function()
-        local current_setting = vim.lsp.inlay_hint.is_enabled(bufnr)
-        vim.lsp.inlay_hint.enable(bufnr, not current_setting)
-      end, opts("Lsp toggle inlay hints"))
-    end
   end,
-  capabilities = nvchad_capabilities,
 }
 
 -- nvim-ufo (ts 에서 배열을 폴드할려면 lsp로 해야함)

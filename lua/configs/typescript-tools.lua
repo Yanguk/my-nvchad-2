@@ -7,11 +7,6 @@ return {
   settings = {
     tsserver_file_preferences = {
       importModuleSpecifierPreference = "non-relative",
-      includeInlayParameterNameHints = "all",
     },
   },
-  -- styled-components만 적용이 되는듯..
-  -- tsserver_plugins = {
-  --   "@styled/typescript-styled-plugin",
-  -- },
 }
