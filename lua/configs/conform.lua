@@ -18,6 +18,7 @@ local options = {
 
     toml = { "taplo" },
     json = { "deno_fmt" },
+    jsonc = { "deno_fmt" },
     yaml = { "yamlfmt" },
   },
 }

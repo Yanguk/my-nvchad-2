@@ -19,18 +19,18 @@ autocmd("VimResized", {
 })
 
 -- 주석처리 에 대한 포멧팅 옵션
-vim.cmd([[autocmd FileType * set formatoptions-=cro]])
+-- vim.cmd([[autocmd FileType * set formatoptions-=cro]])
 
 ----------- fileTypes -----------
-autocmd("FileType", {
-  pattern = { "typescriptreact", "typescript" },
-  callback = function()
-    -- opt.tabstop = 4
-    -- opt.shiftwidth = 4
-    -- opt.softtabstop = 4
-    opt.expandtab = false
-  end,
-})
+-- autocmd("FileType", {
+--   pattern = { "typescriptreact", "typescript" },
+--   callback = function()
+--     opt.tabstop = 4
+--     opt.shiftwidth = 4
+--     opt.softtabstop = 4
+--     opt.expandtab = false
+--   end,
+-- })
 
 autocmd("FileType", {
   pattern = "yaml",
