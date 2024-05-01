@@ -32,15 +32,15 @@ autocmd("VimResized", {
 --   end,
 -- })
 
-autocmd("FileType", {
-  pattern = "yaml",
-  callback = function()
-    opt.tabstop = 2
-    opt.shiftwidth = 2
-    opt.softtabstop = 2
-    opt.expandtab = true
-  end,
-})
+-- autocmd("FileType", {
+--   pattern = "yaml",
+--   callback = function()
+--     opt.tabstop = 2
+--     opt.shiftwidth = 2
+--     opt.softtabstop = 2
+--     opt.expandtab = true
+--   end,
+-- })
 
 vim.filetype.add({
   extension = {
