@@ -142,9 +142,9 @@ map("n", "zM", require("ufo").closeAllFolds, { desc = "ufo close All Folds" })
 -- debugprint
 map("n", "g?d", require("debugprint").deleteprints, { desc = "debugPrint DeleteDebugPrints" })
 
--- delete default map nvcahd
-nomap("t", "<ESC>")
+-- delete default map nvcahd terminal
 nomap("n", "<leader>h")
+nomap("n", "<leader>v")
 
 -- goToTab
 for i = 1, 9, 1 do
