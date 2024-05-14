@@ -136,11 +136,15 @@ map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "RestNvim Run request under
 map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "RestNvim Re-run latest request" })
 
 -- nvim-ufo
-map("n", "zR", require("ufo").openAllFolds, { desc = "ufo open All Folds" })
-map("n", "zM", require("ufo").closeAllFolds, { desc = "ufo close All Folds" })
+map("n", "zR", function()
+  require("ufo").openAllFolds()
+end, { desc = "ufo open All Folds" })
+map("n", "zM", function()
+  require("ufo").closeAllFolds()
+end, { desc = "ufo close All Folds" })
 
 -- debugprint
-map("n", "g?d", require("debugprint").deleteprints, { desc = "debugPrint DeleteDebugPrints" })
+map("n", "g?d", "<cmd>DeleteDebugPrints<cr>", { desc = "debugPrint DeleteDebugPrints" })
 
 -- delete default map nvcahd terminal
 nomap("n", "<leader>h")
