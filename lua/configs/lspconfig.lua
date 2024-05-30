@@ -9,7 +9,6 @@ local default_config = require("configs.default-lsp")
 
 local server_configs = {
   "yamlls",
-  "lua_ls",
 
   ["eslint"] = {
     on_attach = function(client, bufnr)
