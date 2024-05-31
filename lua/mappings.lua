@@ -29,6 +29,19 @@ map(
   { desc = "Search on current file" }
 ) -- 현재 파일에서 검색
 map("v", "<leader>sw", "<esc><cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" }) -- 현재 선택한 단어 검색
+map("n", "<leader>sc", function()
+  local current_dir = vim.fn.expand("%:p:h")
+  local splited_dir = vim.split(current_dir, "/src")
+  local project_dir = vim.split(splited_dir[1], "/")
+
+  local target_project = table.remove(project_dir)
+
+  require("spectre").open({
+    is_insert_mode = true,
+    is_close = true,
+    path = '**/' .. target_project .. '/src/**',
+  })
+end, { desc = "Search on current project" }) -- 현재 프로젝트에서 검색
 
 -- Markdown Preview 플러그인 관련 매핑
 map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Open preview" }) -- 미리보기 열기
@@ -94,12 +107,6 @@ map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle", silent
 map("n", "<leader>tx", function()
   require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Close Buffer" })
-
--- trouble
-map("n", "<leader>lx", "<cmd>TroubleToggle<CR>", { desc = "trouble toggle" })
-map("n", "<leader>lw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { desc = "trouble workspace_diagnostics" })
-map("n", "<leader>ld", "<cmd>TroubleToggle document_diagnostics<CR>", { desc = "trouble document_diagnostics" })
-map("n", "<leader>lq", "<cmd>TroubleToggle quickfix<CR>", { desc = "trouble quickfix" })
 
 -- codeRunner
 map("n", "<leader>cr", function()

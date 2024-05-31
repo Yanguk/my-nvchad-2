@@ -56,6 +56,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    version = "*",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require("configs.lspconfig")
@@ -73,7 +74,20 @@ return {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = "TroubleToggle",
+    keys = {
+      {
+        "<leader>lx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>lX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+    },
+    cmd = "Trouble",
+    opts = {},
   },
 
   {

@@ -17,10 +17,10 @@ local default_config = {
     end
 
     -- Instead of using 'gr', trouble is used.
-    map("n", "<leader>D", "<cmd>Trouble lsp_type_definition<CR>", opts("Trouble lsp_type_definition"))
-    map("n", "gi", "<cmd>Trouble lsp_implementations<CR>", opts("Trouble lsp_implementations"))
-    map("n", "gr", "<cmd>Trouble lsp_references<CR>", opts("Trouble lsp_references"))
-    map("n", "gd", "<cmd>Trouble lsp_definitions<CR>", opts("Trouble lsp_definitions"))
+    map("n", "<leader>D", "<cmd>Trouble lsp_type_definition toggle focus=true<CR>", opts("Trouble lsp_type_definition"))
+    map("n", "gi", "<cmd>Trouble lsp_implementations toggle focus=true<CR>", opts("Trouble lsp_implementations"))
+    map("n", "gr", "<cmd>Trouble lsp_references toggle focus=true<CR>", opts("Trouble lsp_references"))
+    map("n", "gd", "<cmd>Trouble lsp_definitions toggle focus=true<CR>", opts("Trouble lsp_definitions"))
   end,
 }
 
