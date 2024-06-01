@@ -40,3 +40,4 @@ bufs
 notifee
 taplo
 rustaceanvim
+getcwd

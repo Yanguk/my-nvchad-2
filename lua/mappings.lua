@@ -156,6 +156,7 @@ map("n", "g?d", "<cmd>DeleteDebugPrints<cr>", { desc = "debugPrint DeleteDebugPr
 -- delete default map nvcahd terminal
 nomap("n", "<leader>h")
 nomap("n", "<leader>v")
+nomap("n", "<leader>/")
 
 -- goToTab
 for i = 1, 9, 1 do

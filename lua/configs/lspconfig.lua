@@ -1,6 +1,3 @@
--- cSpell:disable
-local map = vim.keymap.set
-
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 
