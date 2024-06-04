@@ -6,6 +6,7 @@ local default_config = require("configs.default-lsp")
 
 local server_configs = {
   "yamlls",
+  "tailwindcss",
 
   ["eslint"] = {
     on_attach = function(client, bufnr)
