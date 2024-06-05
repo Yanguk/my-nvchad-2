@@ -96,12 +96,16 @@ return {
       ensure_installed = {
         -- lsp
         "lua-language-server",
-        "typescript-language-server",
-        "eslint-lsp",
         "rust-analyzer",
         "clangd",
         "yaml-language-server",
         "bash-language-server",
+
+        -- web-dev
+        "eslint-lsp",
+        "typescript-language-server",
+        "graphql-language-service-cli",
+        "tailwindcss-language-server",
 
         -- format
         "shfmt",
