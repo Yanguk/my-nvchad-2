@@ -5,11 +5,11 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "deno_fmt" },
-    typescript = { "deno_fmt" },
-    javascriptreact = { "deno_fmt" },
-    typescriptreact = { "deno_fmt" },
-    markdown = { "deno_fmt" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+    markdown = { "prettier" },
 
     racket = { "raco" },
     sh = { "shfmt" },
@@ -17,8 +17,8 @@ local options = {
     c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "deno_fmt" },
-    jsonc = { "deno_fmt" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
     yaml = { "yamlfmt" },
   },
 }

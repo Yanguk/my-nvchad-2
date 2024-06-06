@@ -45,6 +45,7 @@ return {
         "rust",
         "http",
         "toml",
+        "graphql",
       },
       indent = { enable = true },
       highlight = {
@@ -111,12 +112,10 @@ return {
         "shfmt",
         "clang-format",
         "stylua",
-        "deno",
         "yamlfmt",
 
         -- util
         "cspell",
-        -- "codespell",
       },
     },
   },
