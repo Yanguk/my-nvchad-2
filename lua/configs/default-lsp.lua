@@ -17,10 +17,35 @@ local default_config = {
     end
 
     -- Instead of using 'gr', trouble is used.
-    map("n", "<leader>D", "<cmd>Trouble lsp_type_definition toggle focus=true auto_refresh=false<CR>", opts("Trouble lsp_type_definition"))
-    map("n", "gi", "<cmd>Trouble lsp_implementations toggle focus=true auto_refresh=false<CR>", opts("Trouble lsp_implementations"))
-    map("n", "gr", "<cmd>Trouble lsp_references toggle focus=true auto_refresh=false<CR>", opts("Trouble lsp_references"))
-    map("n", "gd", "<cmd>Trouble lsp_definitions toggle focus=true auto_refresh=false<CR>", opts("Trouble lsp_definitions"))
+    map(
+      "n",
+      "<leader>D",
+      "<cmd>Trouble lsp_type_definition toggle focus=true auto_refresh=false<CR>",
+      opts("Trouble lsp_type_definition")
+    )
+    map(
+      "n",
+      "gi",
+      "<cmd>Trouble lsp_implementations toggle focus=true auto_refresh=false<CR>",
+      opts("Trouble lsp_implementations")
+    )
+    map(
+      "n",
+      "gr",
+      "<cmd>Trouble lsp_references toggle focus=true auto_refresh=false<CR>",
+      opts("Trouble lsp_references")
+    )
+    map(
+      "n",
+      "gd",
+      "<cmd>Trouble lsp_definitions toggle focus=true auto_refresh=false<CR>",
+      opts("Trouble lsp_definitions")
+    )
+
+    -- require("colorizer").attach_to_buffer(0, {
+    --   mode = "background",
+    --   css = true,
+    -- })
   end,
 }
 

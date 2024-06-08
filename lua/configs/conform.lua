@@ -17,8 +17,8 @@ local options = {
     c = { "clang_format" },
 
     toml = { "taplo" },
-    json = { "prettier" },
-    jsonc = { "prettier" },
+    json = { "prettierd" },
+    jsonc = { "prettierd" },
     yaml = { "yamlfmt" },
   },
 }

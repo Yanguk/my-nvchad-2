@@ -575,4 +575,15 @@ return {
     version = "^4", -- Recommended
     lazy = false, -- This plugin is already lazy
   },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function(_, _opts)
+      require("colorizer").setup({
+        user_default_options = {
+          css = true,
+        }
+      })
+    end,
+  },
 }
