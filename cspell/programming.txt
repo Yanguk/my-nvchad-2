@@ -5,3 +5,4 @@ ratatui
 crossterm
 postbuild
 Deque
+Vecs

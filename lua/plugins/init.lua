@@ -578,12 +578,28 @@ return {
 
   {
     "NvChad/nvim-colorizer.lua",
-    config = function(_, _opts)
-      require("colorizer").setup({
-        user_default_options = {
-          css = true,
-        }
-      })
-    end,
+    enabled = false,
+  },
+
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = "User FilePost",
+    opts = {
+      enable_var_usage = true,
+    },
+    config = true,
+  },
+
+  {
+    "NTBBloodbath/color-converter.nvim",
+    keys = {
+      {
+        "<leader>cv",
+        function()
+          require("color-converter").cycle()
+        end,
+        "color-convert",
+      },
+    },
   },
 }
