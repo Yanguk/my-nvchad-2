@@ -39,7 +39,7 @@ map("n", "<leader>sc", function()
   require("spectre").open({
     is_insert_mode = true,
     is_close = true,
-    path = '**/' .. target_project .. '/src/**',
+    path = "**/" .. target_project .. "/src/**",
   })
 end, { desc = "Search on current project" }) -- 현재 프로젝트에서 검색
 
