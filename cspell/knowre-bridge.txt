@@ -30,3 +30,5 @@ virtuals
 Workingday
 daum
 donggle
+Voca
+vocas
