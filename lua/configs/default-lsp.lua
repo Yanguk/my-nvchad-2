@@ -42,10 +42,13 @@ local default_config = {
       opts("Trouble lsp_definitions")
     )
 
-    -- require("colorizer").attach_to_buffer(0, {
-    --   mode = "background",
-    --   css = true,
-    -- })
+    if client.server_capabilities.inlayHintProvider then
+      map("n", "<leader>ih", function()
+        local current_setting = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+
+        vim.lsp.inlay_hint.enable(not current_setting, { bufnr = bufnr })
+      end, opts("Lsp toggle inlay hints"))
+    end
   end,
 }
 

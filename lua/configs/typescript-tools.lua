@@ -6,6 +6,7 @@ return {
   capabilities = default_config.capabilities,
   settings = {
     tsserver_file_preferences = {
+      includeInlayParameterNameHints = "all",
       importModuleSpecifierPreference = "non-relative",
     },
   },
