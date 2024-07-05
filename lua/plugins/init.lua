@@ -24,7 +24,6 @@ return {
       filesystem_watchers = {
         ignore_dirs = {
           "node_modules",
-          ".git",
         },
       },
     },

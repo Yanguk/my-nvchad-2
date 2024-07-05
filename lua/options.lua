@@ -10,7 +10,6 @@ local autocmd = vim.api.nvim_create_autocmd
 vim.loader.enable()
 o.termguicolors = true
 opt.wrap = false
-opt.swapfile = false -- don't create backup files
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
@@ -60,3 +59,6 @@ o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 --------- rustaceanvim ---------
 require("configs.rustaceanvim")
+
+--- backup ---
+require("backup")
