@@ -50,7 +50,6 @@ local function delete_old_files(directory)
   local files = vim.fn.split(vim.fn.glob(directory .. "/*"), "\n")
 
   for _, file in ipairs(files) do
-  print('DEBUG_💥[2]: backup.lua:52: file=' .. vim.inspect(file))
     local modtime = vim.fn.getftime(file)
 
     if modtime < one_day_ago then
