@@ -8,6 +8,7 @@ local server_configs = {
   "yamlls",
   "tailwindcss",
   "graphql",
+  "kotlin_language_server",
 
   ["eslint"] = {
     on_attach = function(client, bufnr)
