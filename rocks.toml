@@ -1,0 +1,31 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.35.2" # rocks.nvim can also manage itself :D
+"rocks-config.nvim" = "2.1.4"
+"rocks-treesitter.nvim" = "1.0.2"
+tree-sitter-typescript = "0.0.1"
+gruvbox-baby = "0.1.8"
+"nvim-tree.lua" = "1.5.0"
+"lsp-zero.nvim" = "scm"
+cmp-nvim-lsp = "scm"
+cmp-buffer = "scm"
+cmp-path = "scm"
+cmp-cmdline = "scm"
+nvim-cmp = "0.0.1"
+
+[bundles.cmp] # Create a bundle called `cmp`
+items = [
+  "cmp-cmdline",
+  "nvim-cmp"
+]
