@@ -77,13 +77,13 @@ return {
     keys = {
       {
         "<leader>lx",
-        "<cmd>Trouble diagnostics toggle focus=true auto_refresh=false<cr>",
-        desc = "Diagnostics (Trouble)",
+        "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
       },
       {
         "<leader>lX",
-        "<cmd>Trouble diagnostics toggle focus=true auto_refresh=false filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
+        "<cmd>Trouble diagnostics toggle focus=true<cr>",
+        desc = "Diagnostics (Trouble)",
       },
     },
     cmd = "Trouble",
