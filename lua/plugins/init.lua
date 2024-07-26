@@ -540,6 +540,10 @@ return {
         end, opts("GitSigns Diff This (cached)"))
       end
 
+      nvchad_opts.current_line_blame_opts = {
+        delay = 200,
+      }
+
       return nvchad_opts
     end,
   },

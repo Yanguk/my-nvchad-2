@@ -32,3 +32,4 @@ daum
 donggle
 Voca
 vocas
+daekyo
