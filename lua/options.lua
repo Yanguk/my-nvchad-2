@@ -1,7 +1,15 @@
+vim.g.rocks_nvim = {
+  luarocks_config = {
+    arch = "macosx-aarch64"
+  }
+}
+
 -- cSpell:disable
 local opt = vim.opt
 local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd
+
+vim.g.mapleader = " "
 
 ------
 o.laststatus = 3

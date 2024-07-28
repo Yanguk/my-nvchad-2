@@ -22,12 +22,6 @@ package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
 
 vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "rocks.nvim", "*"))
 
-vim.g.rocks_nvim = {
-  luarocks_config = {
-    arch = "macosx-aarch64"
-  }
-}
-
 require('options')
 
 vim.schedule(function()

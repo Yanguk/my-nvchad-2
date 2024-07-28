@@ -34,6 +34,9 @@ tree-sitter-rust = "0.0.2"
 tree-sitter-json = "0.0.2"
 tree-sitter-html = "0.0.2"
 tree-sitter-markdown = "0.0.2"
+"telescope.nvim" = "scm"
+"telescope-zf-native.nvim" = "1.0.0"
+"which-key.nvim" = "3.13.2"
 
 [bundles.cmp] # Create a bundle called `cmp`
 items = [
