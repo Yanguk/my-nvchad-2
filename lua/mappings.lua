@@ -4,6 +4,15 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
+-- delete default map nvcahd terminal
+nomap("n", "<C-n>")
+nomap("n", "<leader>e")
+nomap("n", "<leader>h")
+nomap("n", "<leader>v")
+nomap("n", "<leader>/")
+nomap("n", "<leader>b")
+map("n", "<leader>e", "<cmd>enew<CR>", { desc = "buffer new" })
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>fm", function()
@@ -44,8 +53,8 @@ map("n", "<leader>sc", function()
 end, { desc = "Search on current project" }) -- 현재 프로젝트에서 검색
 
 -- Markdown Preview 플러그인 관련 매핑
-map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Open preview" }) -- 미리보기 열기
-map("n", "<leader>mc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Markdown Close preview" }) -- 미리보기 닫기
+-- map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Open preview" }) -- 미리보기 열기
+-- map("n", "<leader>mc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Markdown Close preview" }) -- 미리보기 닫기
 
 -- Trailing Space 플러그인 관련 매핑
 map(
@@ -77,31 +86,11 @@ map("n", "<leader>dc", ":DiffviewClose<CR>", { desc = "Diffview close" }) -- Dif
 -- Zen Mode 플러그인 관련 매핑
 map("n", "<leader>zm", ":ZenMode<CR>", { desc = "ZenMode" }) -- ZenMode 활성화
 
--- NvimTree 플러그인 관련 매핑
-map(
-  "n",
-  "<leader>tt",
-  (function()
-    local isWide = true
-
-    return function()
-      if isWide then
-        vim.cmd(":NvimTreeResize +15")
-      else
-        vim.cmd(":NvimTreeResize -15")
-      end
-
-      isWide = not isWide
-    end
-  end)(),
-  { desc = "Resize nvimtree toggle" }
-)
-
 -- -- LazyGit 플러그인 관련 매핑
 map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit 열기
 
 -- Aerial 플러그인 관련 매핑
-map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle", silent = true }) -- Aerial 토글
+-- map("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle", silent = true }) -- Aerial 토글
 
 -- buffer
 map("n", "<leader>tx", function()
@@ -138,10 +127,6 @@ map("n", "<A-->", ":vertical resize -5<CR>") -- make the window smaller vertical
 map("n", "<A-+>", ":resize +2<CR>") -- make the window bigger horizontally by pressing shift and =
 map("n", "<A-_>", ":resize -2<CR>") -- make the window smaller horizontally by pressing shift and -
 
--- rest nvim
-map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "RestNvim Run request under the cursor" })
-map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "RestNvim Re-run latest request" })
-
 -- nvim-ufo
 map("n", "zR", function()
   require("ufo").openAllFolds()
@@ -152,15 +137,3 @@ end, { desc = "ufo close All Folds" })
 
 -- debugprint
 map("n", "g?d", "<cmd>DeleteDebugPrints<cr>", { desc = "debugPrint DeleteDebugPrints" })
-
--- delete default map nvcahd terminal
-nomap("n", "<leader>h")
-nomap("n", "<leader>v")
-nomap("n", "<leader>/")
-
--- goToTab
-for i = 1, 9, 1 do
-  vim.keymap.set("n", string.format("<A-%s>", i), function()
-    vim.api.nvim_set_current_buf(vim.t.bufs[i])
-  end)
-end
