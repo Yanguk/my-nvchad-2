@@ -10,6 +10,7 @@ local autocmd = vim.api.nvim_create_autocmd
 vim.loader.enable()
 o.termguicolors = true
 opt.wrap = false
+opt.swapfile = false -- don't create backup files
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
@@ -41,13 +42,13 @@ autocmd("VimResized", {
 --   end,
 -- })
 
-vim.filetype.add({
-  extension = {
-    mdx = "mdx",
-  },
-})
-
-vim.treesitter.language.register("markdown", "mdx")
+-- vim.filetype.add({
+--   extension = {
+--     mdx = "mdx",
+--   },
+-- })
+--
+-- vim.treesitter.language.register("markdown", "mdx")
 
 ----------- plugin -----------
 -- UFO folding
@@ -59,6 +60,3 @@ o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 --------- rustaceanvim ---------
 require("configs.rustaceanvim")
-
---- backup ---
-require("backup")

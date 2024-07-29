@@ -10,16 +10,10 @@ local WEB_FT_LIST = {
 }
 
 return {
-  {
-    "stevearc/conform.nvim",
-    config = function()
-      require("configs.conform")
-    end,
-  },
-
-  -- override
+  -- enabled false
   {
     "nvim-tree/nvim-tree.lua",
+    enabled = false,
     opts = {
       filesystem_watchers = {
         ignore_dirs = {
@@ -27,6 +21,116 @@ return {
         },
       },
     },
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    enabled = false,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+      vim.g.mkdp_theme = "dark"
+    end,
+  },
+
+  {
+    "lbrayner/vim-rzip",
+    enabled = false,
+    ft = {
+      "zip",
+      "typescript",
+      "javascript",
+      "typescriptreact",
+      "typescriptreact",
+    },
+  },
+
+  {
+    "cameron-wags/rainbow_csv.nvim",
+    enabled = false,
+    ft = {
+      "csv",
+      "tsv",
+      "csv_semicolon",
+      "csv_whitespace",
+      "csv_pipe",
+      "rfc_csv",
+      "rfc_semicolon",
+    },
+    config = true,
+  },
+
+  {
+    enabled = false,
+    "stevearc/aerial.nvim",
+    cmd = { "AerialToggle" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = true,
+  },
+
+  {
+    "ggandor/leap.nvim",
+    enabled = false,
+    keys = { "s", "S", desc = "Leap" },
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
+
+  {
+    "saecki/crates.nvim",
+    enabled = false,
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      local crates = require("crates")
+      crates.setup()
+
+      vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, {
+        silent = true,
+        desc = "Crates Show Versions",
+      })
+
+      vim.keymap.set("n", "<leader>cf", crates.show_features_popup, {
+        silent = true,
+        desc = "Crates Show Features",
+      })
+
+      vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, {
+        silent = true,
+        desc = "Crates Show Dependencies",
+      })
+    end,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false,
+  },
+
+  {
+    "NTBBloodbath/color-converter.nvim",
+    enabled = false,
+    keys = {
+      {
+        "<leader>cv",
+        function()
+          require("color-converter").cycle()
+        end,
+        "color-convert",
+      },
+    },
+  },
+
+  -- ----
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("configs.conform")
+    end,
   },
 
   {
@@ -224,7 +328,6 @@ return {
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
         config = function()
-          vim.g.skip_ts_context_commentstring_module = true
           require("ts_context_commentstring").setup({
             enable_autocmd = false,
           })
@@ -245,7 +348,7 @@ return {
     end,
   },
 
-  -- add Plugin
+
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
@@ -293,16 +396,6 @@ return {
   },
 
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-      vim.g.mkdp_theme = "dark"
-    end,
-  },
-
-  {
     "windwp/nvim-ts-autotag",
     ft = WEB_FT_LIST,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -312,16 +405,6 @@ return {
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-  },
-
-  {
-    "antosha417/nvim-lsp-file-operations",
-    event = "InsertEnter",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-tree/nvim-tree.lua" },
-    },
-    config = true,
   },
 
   {
@@ -396,73 +479,6 @@ return {
       }
     end,
     version = "*",
-  },
-
-  {
-    "ggandor/leap.nvim",
-    keys = { "s", "S", desc = "Leap" },
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
-
-  {
-    "lbrayner/vim-rzip",
-    ft = {
-      "zip",
-      "typescript",
-      "javascript",
-      "typescriptreact",
-      "typescriptreact",
-    },
-  },
-
-  {
-    "cameron-wags/rainbow_csv.nvim",
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pipe",
-      "rfc_csv",
-      "rfc_semicolon",
-    },
-    config = true,
-  },
-
-  {
-    "stevearc/aerial.nvim",
-    cmd = { "AerialToggle" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-  },
-
-  {
-    "saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    config = function()
-      local crates = require("crates")
-      crates.setup()
-
-      vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, {
-        silent = true,
-        desc = "Crates Show Versions",
-      })
-
-      vim.keymap.set("n", "<leader>cf", crates.show_features_popup, {
-        silent = true,
-        desc = "Crates Show Features",
-      })
-
-      vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, {
-        silent = true,
-        desc = "Crates Show Dependencies",
-      })
-    end,
   },
 
   {
@@ -562,12 +578,8 @@ return {
   },
 
   {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-  },
-
-  {
     "brenoprata10/nvim-highlight-colors",
+    enabled = false,
     event = "User FilePost",
     opts = {
       enable_var_usage = true,
@@ -576,15 +588,43 @@ return {
   },
 
   {
-    "NTBBloodbath/color-converter.nvim",
-    keys = {
-      {
-        "<leader>cv",
-        function()
-          require("color-converter").cycle()
-        end,
-        "color-convert",
+    "stevearc/oil.nvim",
+    event = "VeryLazy",
+    keys = { { "-", "<CMD>Oil<CR>", mode = { "n" }, { desc = "Open parent directory" } } },
+    opts = {
+      keymaps = {
+        ["g?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        -- ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+        -- ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
+        -- ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = "actions.close",
+        -- ["<C-l>"] = "actions.refresh",
+        ["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["g."] = "actions.toggle_hidden",
+        ["g\\"] = "actions.toggle_trash",
+        ["gd"] = {
+          desc = "Toggle file detail view",
+          callback = function()
+            detail = not detail
+            if detail then
+              require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+            else
+              require("oil").set_columns({ "icon" })
+            end
+          end,
+        },
       },
+      use_default_keymaps = false,
     },
+    -- Optional dependencies
+    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
 }
