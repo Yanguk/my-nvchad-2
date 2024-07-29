@@ -348,7 +348,6 @@ return {
     end,
   },
 
-
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
@@ -611,20 +610,23 @@ return {
         ["g\\"] = "actions.toggle_trash",
         ["gd"] = {
           desc = "Toggle file detail view",
-          callback = function()
-            detail = not detail
-            if detail then
-              require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
-            else
-              require("oil").set_columns({ "icon" })
+          callback = (function()
+            local detail = false
+
+            return function()
+              detail = not detail
+
+              if detail then
+                require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+              else
+                require("oil").set_columns({ "icon" })
+              end
             end
-          end,
+          end)(),
         },
       },
       use_default_keymaps = false,
     },
-    -- Optional dependencies
-    -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
