@@ -22,9 +22,8 @@ package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
 
 vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "rocks.nvim", "*"))
 
-require('options')
+require("options")
 
 vim.schedule(function()
-  require "mappings"
+  require("mappings")
 end)
-

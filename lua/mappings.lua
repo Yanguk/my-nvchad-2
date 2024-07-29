@@ -3,36 +3,26 @@ local map = vim.keymap.set
 local nomap = vim.keymap.del
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
---
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
---
+
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
 -- map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "file copy whole" })
 --
 -- map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 -- map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 -- map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
---
--- map("n", "<leader>fm", function()
---   require("conform").format { lsp_fallback = true }
--- end, { desc = "format files" })
---
--- -- nvimtree
--- map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
--- map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
---
--- ----------------------------------
--- map("n", ";", ":", { desc = "CMD enter command mode" })
---
--- map("n", "<leader>fm", function()
---   require("conform").format()
--- end, { desc = "File Format with conform" })
---
--- map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
---
+
+map("n", ";", ":", { desc = "CMD enter command mode" })
+
+map("n", "<leader>fm", function()
+  require("conform").format()
+end, { desc = "File Format with conform" })
+
+map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
+
 -- -- add yours here
 --
 -- -- Spectre 플러그인 관련 매핑
@@ -173,20 +163,4 @@ map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
 --
 -- -- debugprint
 -- map("n", "g?d", "<cmd>DeleteDebugPrints<cr>", { desc = "debugPrint DeleteDebugPrints" })
---
--- -- goToTab
--- for i = 1, 9, 1 do
---   vim.keymap.set("n", string.format("<A-%s>", i), function()
---     vim.api.nvim_set_current_buf(vim.t.bufs[i])
---   end)
--- end
---
--- require("telescope").load_extension("zf-native")
---
--- local builtin = require('telescope.builtin')
---
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
--- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 --

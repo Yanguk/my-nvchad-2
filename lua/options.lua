@@ -1,8 +1,8 @@
-vim.g.rocks_nvim = {
-  luarocks_config = {
-    arch = "macosx-aarch64"
-  }
-}
+-- vim.g.rocks_nvim = {
+--   luarocks_config = {
+--     arch = "macosx-aarch64"
+--   }
+-- }
 
 -- cSpell:disable
 local opt = vim.opt
