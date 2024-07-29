@@ -2,6 +2,8 @@
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
+nomap("n", "gc")
+
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })

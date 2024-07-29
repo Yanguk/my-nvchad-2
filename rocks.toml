@@ -13,7 +13,6 @@
 [plugins]
 "rocks.nvim" = "2.35.2" # rocks.nvim can also manage itself :D
 "rocks-config.nvim" = "2.1.4"
-"rocks-treesitter.nvim" = "1.0.2"
 
 "lsp-zero.nvim" = "scm"
 gruvbox-baby = "0.1.8"
@@ -35,14 +34,7 @@ copilot-cmp = "scm"
 "debugprint.nvim" = { git = "andrewferrier/debugprint.nvim" }
 "zen-mode.nvim" = "1.4.0"
 nvim-lint = "scm"
-tree-sitter-typescript = "0.0.3"
-tree-sitter-tsx = "0.0.1"
-tree-sitter-toml = "0.0.1"
-tree-sitter-lua = "0.0.2"
-tree-sitter-rust = "0.0.2"
-tree-sitter-json = "0.0.2"
-tree-sitter-html = "0.0.2"
-tree-sitter-markdown = "0.0.2"
+"nvim-treesitter" = { git = "nvim-treesitter/nvim-treesitter" }
 
 [bundles.cmp] # Create a bundle called `cmp`
 items = [
@@ -52,7 +44,3 @@ items = [
   "cmp-cmdline",
   "nvim-cmp"
 ]
-
-[treesitter]
-auto_highlight = "all"
-auto_install = "prompt" # true | false
