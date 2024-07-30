@@ -62,17 +62,6 @@ return {
   },
 
   {
-    enabled = false,
-    "stevearc/aerial.nvim",
-    cmd = { "AerialToggle" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-  },
-
-  {
     "ggandor/leap.nvim",
     enabled = false,
     keys = { "s", "S", desc = "Leap" },
@@ -629,4 +618,15 @@ return {
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+
+  {
+    "stevearc/aerial.nvim",
+    cmd = { "AerialToggle" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = true,
+  },
+
 }
