@@ -51,10 +51,6 @@ map("n", "<leader>sc", function()
   })
 end, { desc = "Search on current project" }) -- 현재 프로젝트에서 검색
 
--- Markdown Preview 플러그인 관련 매핑
--- map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Open preview" }) -- 미리보기 열기
--- map("n", "<leader>mc", "<cmd>MarkdownPreviewStop<CR>", { desc = "Markdown Close preview" }) -- 미리보기 닫기
-
 -- Trailing Space 플러그인 관련 매핑
 map(
   "n",
