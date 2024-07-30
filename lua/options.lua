@@ -7,7 +7,6 @@ local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd
 
 ----------- default options -----------
-vim.loader.enable()
 o.termguicolors = true
 opt.wrap = false
 opt.swapfile = false -- don't create backup files
@@ -17,30 +16,6 @@ autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
-
--- 주석처리 에 대한 포멧팅 옵션
--- vim.cmd([[autocmd FileType * set formatoptions-=cro]])
-
------------ fileTypes -----------
--- autocmd("FileType", {
---   pattern = { "typescriptreact", "typescript" },
---   callback = function()
---     opt.tabstop = 4
---     opt.shiftwidth = 4
---     opt.softtabstop = 4
---     opt.expandtab = false
---   end,
--- })
-
--- autocmd("FileType", {
---   pattern = "yaml",
---   callback = function()
---     opt.tabstop = 2
---     opt.shiftwidth = 2
---     opt.softtabstop = 2
---     opt.expandtab = true
---   end,
--- })
 
 -- vim.filetype.add({
 --   extension = {

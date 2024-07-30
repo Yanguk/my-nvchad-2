@@ -125,6 +125,16 @@ return {
     },
   },
 
+  {
+    "brenoprata10/nvim-highlight-colors",
+    enabled = false,
+    event = "User FilePost",
+    opts = {
+      enable_var_usage = true,
+    },
+    config = true,
+  },
+
   -- ----
   {
     "stevearc/conform.nvim",
@@ -574,16 +584,6 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^4", -- Recommended
     lazy = false, -- This plugin is already lazy
-  },
-
-  {
-    "brenoprata10/nvim-highlight-colors",
-    enabled = false,
-    event = "User FilePost",
-    opts = {
-      enable_var_usage = true,
-    },
-    config = true,
   },
 
   {

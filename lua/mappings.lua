@@ -11,7 +11,6 @@ nomap("n", "<leader>h")
 nomap("n", "<leader>v")
 nomap("n", "<leader>/")
 nomap("n", "<leader>b")
-map("n", "<leader>e", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
