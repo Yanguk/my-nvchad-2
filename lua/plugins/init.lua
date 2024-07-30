@@ -14,18 +14,17 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     enabled = false,
-    opts = {
-      filesystem_watchers = {
-        ignore_dirs = {
-          "node_modules",
-        },
-      },
-    },
   },
 
   {
-    "iamcco/markdown-preview.nvim",
+    "NvChad/nvim-colorizer.lua",
     enabled = false,
+  },
+
+  --------------------
+
+  {
+    "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function()
@@ -34,97 +33,6 @@ return {
     end,
   },
 
-  {
-    "lbrayner/vim-rzip",
-    enabled = false,
-    ft = {
-      "zip",
-      "typescript",
-      "javascript",
-      "typescriptreact",
-      "typescriptreact",
-    },
-  },
-
-  {
-    "cameron-wags/rainbow_csv.nvim",
-    enabled = false,
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pipe",
-      "rfc_csv",
-      "rfc_semicolon",
-    },
-    config = true,
-  },
-
-  {
-    "ggandor/leap.nvim",
-    enabled = false,
-    keys = { "s", "S", desc = "Leap" },
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
-
-  {
-    "saecki/crates.nvim",
-    enabled = false,
-    event = { "BufRead Cargo.toml" },
-    config = function()
-      local crates = require("crates")
-      crates.setup()
-
-      vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, {
-        silent = true,
-        desc = "Crates Show Versions",
-      })
-
-      vim.keymap.set("n", "<leader>cf", crates.show_features_popup, {
-        silent = true,
-        desc = "Crates Show Features",
-      })
-
-      vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, {
-        silent = true,
-        desc = "Crates Show Dependencies",
-      })
-    end,
-  },
-
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-  },
-
-  {
-    "NTBBloodbath/color-converter.nvim",
-    enabled = false,
-    keys = {
-      {
-        "<leader>cv",
-        function()
-          require("color-converter").cycle()
-        end,
-        "color-convert",
-      },
-    },
-  },
-
-  {
-    "brenoprata10/nvim-highlight-colors",
-    enabled = false,
-    event = "User FilePost",
-    opts = {
-      enable_var_usage = true,
-    },
-    config = true,
-  },
-
-  -- ----
   {
     "stevearc/conform.nvim",
     config = function()
@@ -226,6 +134,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       {
+        -- https://github.com/NvChad/NvChad/discussions/2662
         "hrsh7th/cmp-cmdline",
         event = { "CmdLineEnter" },
         opts = {
@@ -628,5 +537,4 @@ return {
     },
     config = true,
   },
-
 }
