@@ -11,12 +11,10 @@ nomap("n", "<leader>h")
 nomap("n", "<leader>v")
 nomap("n", "<leader>/")
 nomap("n", "<leader>b")
+nomap("n", "<leader>th")
+nomap("n", "<leader>rn")
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-
-map("n", "<leader>fm", function()
-  require("conform").format()
-end, { desc = "File Format with conform" })
 
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 
@@ -70,7 +68,7 @@ map(
       isHighlightEnabled = not isHighlightEnabled
     end
   end)(),
-  { desc = "Toggle trailing space" }
+  { desc = "[T]oggle trailing [S]pace" }
 ) -- 뒤에 공백 토글
 
 -- Diffview 플러그인 관련 매핑

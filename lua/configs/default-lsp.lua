@@ -43,11 +43,11 @@ local default_config = {
     )
 
     if client.server_capabilities.inlayHintProvider then
-      map("n", "<leader>ih", function()
+      map("n", "<leader>th", function()
         local current_setting = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
 
         vim.lsp.inlay_hint.enable(not current_setting, { bufnr = bufnr })
-      end, opts("Lsp toggle inlay hints"))
+      end, opts("[T]oggle inlay [H]ints"))
     end
   end,
 }
