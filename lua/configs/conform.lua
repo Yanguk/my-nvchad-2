@@ -5,11 +5,12 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    javascriptreact = { "prettier" },
-    typescriptreact = { "prettier" },
-    markdown = { "prettier" },
+    javascript = { "prettierd" },
+    typescript = { "prettierd" },
+    javascriptreact = { "prettierd" },
+    typescriptreact = { "prettierd" },
+    markdown = { "prettierd" },
+    html = { "prettierd" },
 
     racket = { "raco" },
     sh = { "shfmt" },
