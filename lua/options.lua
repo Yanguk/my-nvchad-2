@@ -17,14 +17,6 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
--- vim.filetype.add({
---   extension = {
---     mdx = "mdx",
---   },
--- })
---
--- vim.treesitter.language.register("markdown", "mdx")
-
 ----------- plugin -----------
 -- UFO folding
 o.foldcolumn = "1" -- '0' is not bad
