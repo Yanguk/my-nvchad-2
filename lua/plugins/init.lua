@@ -509,4 +509,73 @@ return {
       require("leap").add_default_mappings()
     end,
   },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<C-N>",
+        function()
+          require("harpoon"):list():next()
+        end,
+        desc = "harpoon [T]ab [N]ext",
+      },
+      {
+        "<C-P>",
+        function()
+          require("harpoon"):list():prev()
+        end,
+        desc = "harpoon [T]ab [P]rev",
+      },
+      {
+        "<C-e>",
+        function()
+          local harpoon = require("harpoon")
+
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "harpoon [E]xplorer",
+      },
+      {
+        "<leader>a",
+        function()
+          require("harpoon"):list():add()
+        end,
+        desc = "harpoon [A]dd",
+      },
+      {
+        "<A-1>",
+        function()
+          require("harpoon"):list():select(1)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-2>",
+        function()
+          require("harpoon"):list():select(2)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-3>",
+        function()
+          require("harpoon"):list():select(3)
+        end,
+        desc = "harpoon select [1]",
+      },
+      {
+        "<A-4>",
+        function()
+          require("harpoon"):list():select(4)
+        end,
+        desc = "harpoon select [1]",
+      },
+    },
+    config = function()
+      require("harpoon"):setup()
+    end,
+  },
 }

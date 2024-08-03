@@ -83,7 +83,7 @@ map("n", "<leader>zm", ":ZenMode<CR>", { desc = "ZenMode" }) -- ZenMode 활성�
 map("n", "<leader>gg", ":LazyGit <CR>", { desc = "Open lazyGit" }) -- LazyGit 열기
 
 -- Aerial 플러그인 관련 매핑
-map("n", "<leader>a", "<cmd>AerialToggle<CR>", { desc = "Aerial Toggle", silent = true })
+map("n", "<leader>ta", "<cmd>AerialToggle<CR>", { desc = "[T]oggle [A]erial", silent = true })
 
 -- buffer
 map("n", "<leader>tx", function()

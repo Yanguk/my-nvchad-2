@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-  theme = "gruvbox",
+  theme = "kanagawa",
   -- transparency = true,
 
   nvdash = {
