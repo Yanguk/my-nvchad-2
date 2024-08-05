@@ -5,10 +5,10 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
 
-    javascript = { "prettierd" },
-    typescript = { "prettierd" },
-    javascriptreact = { "prettierd" },
-    typescriptreact = { "prettierd" },
+    javascript = { "eslint_d" },
+    typescript = { "eslint_d" },
+    javascriptreact = { "eslint_d" },
+    typescriptreact = { "eslint_d" },
     markdown = { "prettierd" },
     html = { "prettierd" },
 
@@ -21,6 +21,12 @@ local options = {
     json = { "prettierd" },
     jsonc = { "prettierd" },
     yaml = { "yamlfmt" },
+  },
+
+  format_on_save = {
+    -- I recommend these options. See :help conform.format for details.
+    lsp_format = "fallback",
+    timeout_ms = 500,
   },
 }
 
