@@ -35,6 +35,7 @@ return {
 
   {
     "stevearc/conform.nvim",
+    event = { "BufWritePre" },
     config = function()
       require("configs.conform")
     end,
@@ -123,6 +124,7 @@ return {
         "clang-format",
         "stylua",
         "yamlfmt",
+        "eslint_d",
 
         -- util
         "cspell",
