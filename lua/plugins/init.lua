@@ -35,7 +35,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    event = { "BufWritePre" },
     config = function()
       require("configs.conform")
     end,
@@ -109,14 +108,14 @@ return {
         -- lsp
         "lua-language-server",
         "rust-analyzer",
-        -- "clangd",
+        "clangd",
         "yaml-language-server",
-        -- "bash-language-server",
+        "bash-language-server",
 
         -- web-dev
         "eslint-lsp",
         "typescript-language-server",
-        -- "graphql-language-service-cli",
+        "graphql-language-service-cli",
         "tailwindcss-language-server",
 
         -- format
@@ -124,7 +123,6 @@ return {
         "clang-format",
         "stylua",
         "yamlfmt",
-        "eslint_d",
 
         -- util
         "cspell",
