@@ -288,18 +288,41 @@ return {
 
   {
     "folke/zen-mode.nvim",
-    cmd = { "ZenMode" },
+    keys = { { "<leader>zm", "<cmd>ZenMode<CR>", desc = "ZenMode" } },
   },
 
   {
     "nvim-pack/nvim-spectre",
-    cmd = { "Spectre" },
+    keys = {
+      {
+        "<leader>S",
+        "<cmd>lua require('spectre').toggle()<CR>",
+        desc = "[S]earch current word",
+      },
+      {
+        "<leader>sw",
+        "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+        desc = "[S]earch current [W]ord",
+      },
+      {
+        "<leader>sw",
+        "<esc><cmd>lua require('spectre').open_visual()<CR>",
+        desc = "[S]earch current [W]ord",
+        mode = "v",
+      },
+      {
+        "<leader>sp",
+        "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+        desc = "[S]earch on current file",
+      },
+    },
     opts = {
       default = {
         replace = {
           cmd = "oxi",
         },
       },
+      is_block_ui_break = true,
     },
     config = true,
   },
@@ -313,7 +336,11 @@ return {
 
   {
     "sindrets/diffview.nvim",
-    cmd = { "DiffviewFileHistory", "DiffviewOpen" },
+    keys = {
+      { "<leader>do", "<cmd>DiffviewOpen<CR>", desc = "Diffview open" },
+      { "<leader>dv", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file %" },
+      { "<leader>dc", "<cmd>DiffviewClose<CR>", desc = "Diffview close" },
+    },
   },
 
   {
@@ -325,7 +352,7 @@ return {
 
   {
     "kdheepak/lazygit.nvim",
-    cmd = { "LazyGit" },
+    keys = { { "<leader>gg", "<cmd>LazyGit<CR>", desc = "LazyGit" } },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -334,6 +361,10 @@ return {
   {
     "kevinhwang91/nvim-ufo",
     event = "BufReadPost",
+    keys = {
+      { "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", desc = "ufo open All Folds" },
+      { "zm", "<cmd>lua require('ufo').closeAllFolds()<CR>", desc = "ufo close All Folds" },
+    },
     dependencies = {
       "kevinhwang91/promise-async",
       {
@@ -363,7 +394,11 @@ return {
 
   {
     "andrewferrier/debugprint.nvim",
-    keys = { "g?" },
+    keys = {
+      { "g?", mode = "n" },
+      { "g?", mode = "x" },
+      { "g?d", "<cmd>DeleteDebugPrints<CR>", desc = "debugPrint DeleteDebugPrints" },
+    },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
@@ -496,7 +531,7 @@ return {
 
   {
     "stevearc/aerial.nvim",
-    cmd = { "AerialToggle" },
+    keys = { { "<leader>ta", "<cmd>AerialToggle<CR>", desc = "[T]oggle [A]erial", silent = true } },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
