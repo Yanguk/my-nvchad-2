@@ -17,6 +17,13 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
+-- add filetype --
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})
+
 ----------- plugin -----------
 
 -- UFO folding
@@ -49,7 +56,7 @@ end, {
   desc = "Re-enable autoformat-on-save",
 })
 
--- 노리 프로젝트에서는 자동포멧 비활성화
+-- ts 프로젝트에서는 자동포멧 비활성화
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "typescript", "typescriptreact" },
   callback = function()
