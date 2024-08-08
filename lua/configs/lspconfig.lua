@@ -13,11 +13,10 @@ local server_configs = {
     on_attach = function(client, bufnr)
       default_config.on_attach(client, bufnr)
 
-      -- eslint_d로 포멧
-      -- vim.api.nvim_create_autocmd("BufWritePre", {
-      --   buffer = bufnr,
-      --   command = "EslintFixAll",
-      -- })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        command = "EslintFixAll",
+      })
     end,
   },
   ["bashls"] = {

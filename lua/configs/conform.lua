@@ -7,20 +7,20 @@ require("conform").setup({
     lua = { "stylua" },
 
     javascript = {
-      -- "prettierd" ,
-      "eslint_d",
+      "prettierd",
+      -- "eslint_d",
     },
     typescript = {
-      -- "prettierd",
-      "eslint_d",
+      "prettierd",
+      -- "eslint_d",
     },
     javascriptreact = {
-      -- "prettierd",
-      "eslint_d",
+      "prettierd",
+      -- "eslint_d",
     },
     typescriptreact = {
-      -- "prettierd",
-      "eslint_d",
+      "prettierd",
+      -- "eslint_d",
     },
     markdown = { "prettierd" },
     html = { "prettierd" },

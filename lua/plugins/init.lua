@@ -615,30 +615,4 @@ return {
       require("harpoon"):setup()
     end,
   },
-
-  {
-    "rest-nvim/rest.nvim",
-    ft = "http",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telescope").load_extension("rest")
-      require("rest-nvim").setup()
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "http",
-        callback = function(opts)
-          vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Rest Run", buffer = opts.buf })
-          vim.keymap.set(
-            "n",
-            "<leader>rl",
-            "<cmd>Rest run last<cr>",
-            { desc = "Rest Re-run latest request", buffer = opts.buf }
-          )
-          vim.keymap.set("n", "<leader>re", function()
-            require("telescope").extensions.rest.select_env()
-          end, { desc = "Rest select env", buffer = opts.buf })
-        end,
-      })
-    end,
-  },
 }
