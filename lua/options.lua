@@ -5,17 +5,12 @@ require("nvchad.options")
 local opt = vim.opt
 local o = vim.o
 local autocmd = vim.api.nvim_create_autocmd
+local command = vim.api.nvim_create_user_command
 
 ----------- default options -----------
 o.termguicolors = true
 opt.wrap = false
 opt.swapfile = false -- don't create backup files
-
--- Auto resize panes when resizing nvim window
-autocmd("VimResized", {
-  pattern = "*",
-  command = "tabdo wincmd =",
-})
 
 -- add filetype --
 vim.filetype.add({
@@ -37,7 +32,7 @@ o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 require("configs.rustaceanvim")
 
 -- conform toggle --
-vim.api.nvim_create_user_command("FormatDisable", function(args)
+command("FormatDisable", function(args)
   if args.bang then
     -- FormatDisable! will disable formatting just for this buffer
     vim.b.disable_autoformat = true
@@ -49,7 +44,7 @@ end, {
   bang = true,
 })
 
-vim.api.nvim_create_user_command("FormatEnable", function()
+command("FormatEnable", function()
   vim.b.disable_autoformat = false
   vim.g.disable_autoformat = false
 end, {
@@ -57,7 +52,7 @@ end, {
 })
 
 -- ts 프로젝트에서는 자동포멧 비활성화
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   pattern = { "typescript", "typescriptreact", "javascript" },
   callback = function()
     vim.g.disable_autoformat = true
