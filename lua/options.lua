@@ -36,8 +36,6 @@ o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 --------- rustaceanvim ---------
 require("configs.rustaceanvim")
 
--- 자동포멧 비활성화
-vim.g.disable_autoformat = true
 -- conform toggle --
 vim.api.nvim_create_user_command("FormatDisable", function(args)
   if args.bang then
@@ -59,8 +57,9 @@ end, {
 })
 
 -- ts 프로젝트에서는 자동포멧 비활성화
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "typescript", "typescriptreact", "javascript" },
---   callback = function()
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "typescript", "typescriptreact", "javascript" },
+  callback = function()
+    vim.g.disable_autoformat = true
+  end,
+})
