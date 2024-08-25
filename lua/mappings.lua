@@ -55,6 +55,7 @@ map("n", "<leader>cr", function()
     python = "python3 " .. current_file,
     racket = "csi -script " .. current_file,
     c = "gcc " .. current_file .. " -o " .. compiled_file .. " && " .. "./" .. compiled_file,
+    cpp = "g++ " .. current_file .. " -o " .. compiled_file .. " && " .. "./" .. compiled_file,
   }
 
   if ft_cmds[vim.bo.filetype] == nil then
