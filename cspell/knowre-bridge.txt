@@ -34,3 +34,6 @@ Voca
 vocas
 daekyo
 hicampus
+kunnr
+zemp
+seongJangPan

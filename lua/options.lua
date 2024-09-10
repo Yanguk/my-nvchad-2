@@ -56,3 +56,9 @@ autocmd("FileType", {
   pattern = { "typescript", "typescriptreact", "javascript" },
   command = "FormatDisable",
 })
+
+-- Auto resize panes when resizing nvim window
+autocmd("VimResized", {
+  pattern = "*",
+  command = "tabdo wincmd =",
+})
