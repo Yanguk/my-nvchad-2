@@ -1,12 +1,12 @@
 local M = {}
 
-M.ui = {
+M.nvdash = {
+  load_on_startup = true,
+}
+
+M.base46 = {
   theme = "gruvbox",
   -- transparency = true,
-
-  nvdash = {
-    load_on_startup = true,
-  },
 
   hl_override = {
     ["@comment"] = {
