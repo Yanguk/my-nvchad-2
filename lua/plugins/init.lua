@@ -95,39 +95,12 @@ return {
     },
     cmd = "Trouble",
     config = function()
-      dofile(vim.g.base46_cache .. "trouble")
       require("trouble").setup()
     end,
   },
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- lsp
-        "lua-language-server",
-        "rust-analyzer",
-        "clangd",
-        "yaml-language-server",
-        "bash-language-server",
-
-        -- web-dev
-        "eslint-lsp",
-        "typescript-language-server",
-        "graphql-language-service-cli",
-        "tailwindcss-language-server",
-
-        -- format
-        "shfmt",
-        "clang-format",
-        "stylua",
-        "yamlfmt",
-        "eslint_d",
-
-        -- util
-        "cspell",
-      },
-    },
   },
 
   {
