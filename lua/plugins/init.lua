@@ -16,11 +16,6 @@ return {
     enabled = false,
   },
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-  },
-
   --------------------
 
   {
@@ -645,14 +640,5 @@ return {
       "RainbowDelimQuoted",
       "RainbowMultiDelim",
     },
-  },
-
-  {
-    "brenoprata10/nvim-highlight-colors",
-    event = "User FilePost",
-    opts = {
-      enable_var_usage = true,
-    },
-    config = true,
   },
 }
